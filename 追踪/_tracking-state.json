@@ -1,14 +1,556 @@
 {
-  "schema_version": 1,
   "book_title": "追影",
-  "last_committed_chapter": 0,
-  "imported_through_chapter": 0,
-  "state_revision": 0,
-  "characters": {},
-  "context": {
-    "summary": "",
-    "open_threads": []
+  "chapter_summaries": {
+    "1": "地点别名补登（revision）：家属院增别名院门口；新登沈家（别名自家门口）。",
+    "2": "他记得院门口有棵槐树，老妈说一直都没有，他哦了一声就走。巷口张家的车丢了。她把最热的包子留给他，他谢了声就忘了。合影上她那个位置是糊的。他在她家铺子说碱放早了，第二天汤真清了。回家递扳手时看见老爸指甲盖发白、腿麻扶墙。他倒水，杯把手朝外。",
+    "3": "舅舅拎酒上门踩老爸：你这辈子也就这样了。一句别学你爸点着了他。他连问三句：东郊、货压着、订金，把三十万的大单问崩。舅舅打电话求证，手在抖，酒没喝就走，留一句这孩子邪门。他把功劳推给老爸。老爸第一次正眼看他，只说了句吃饭。"
   },
-  "foreshadow": [],
-  "timeline": []
+  "characters": {
+    "李国强": {
+      "abilities_resources": [
+        "生意门路",
+        "一辆摩托"
+      ],
+      "goal": "证明自己混得比姐夫强",
+      "identity": "李秀兰的弟弟，做建材生意",
+      "knowledge": [
+        "三十万可能要不回来了"
+      ],
+      "location": "沈家堂屋与院子（章中离场）",
+      "open_threads": [
+        "ch016 二次打脸"
+      ],
+      "relationships": [
+        "李秀兰：姐弟",
+        "沈建国：看不起",
+        "沈亦舟：这孩子邪门"
+      ],
+      "state": "崩。打电话那只手在抖，烟掉了没捡，酒没喝就走"
+    },
+    "李婶": {
+      "abilities_resources": [],
+      "goal": "把孩子带好",
+      "identity": "同院邻居，有个三四岁的儿子",
+      "knowledge": [
+        "医生的话与他说的一字不差"
+      ],
+      "location": "家属院",
+      "open_threads": [],
+      "relationships": [
+        "沈亦舟：邻居家的孩子"
+      ],
+      "state": "先笑后信"
+    },
+    "李秀兰": {
+      "abilities_resources": [],
+      "goal": "让这顿饭吃下去",
+      "identity": "沈家母亲，李国强的姐姐",
+      "knowledge": [
+        "弟弟的三十万可能出事了"
+      ],
+      "location": "沈家堂屋与厨房",
+      "open_threads": [],
+      "relationships": [
+        "沈建国：夫妻",
+        "沈亦舟：母子",
+        "李国强：姐弟"
+      ],
+      "state": "两头拦不住。收桌时抱怨弟弟说来就来、说走就走"
+    },
+    "沈亦舟": {
+      "abilities_resources": [
+        "望诊",
+        "看事看赔率"
+      ],
+      "goal": "忍到不能再忍，借小孩的身份说话",
+      "identity": "沈家儿子，九岁，小学三年级",
+      "knowledge": [
+        "东郊那个厂要出事（记不清哪天）",
+        "老爸有病（未说）"
+      ],
+      "location": "沈家堂屋与院子",
+      "open_threads": [
+        "ch016 二次打脸",
+        "老爸的病怎么开口"
+      ],
+      "relationships": [
+        "沈建国：父子，第一次平视",
+        "李秀兰：母子",
+        "李国强：结下后患"
+      ],
+      "state": "平。放下筷子，把赢下来的功劳推给了老爸"
+    },
+    "沈建国": {
+      "abilities_resources": [
+        "会修自行车"
+      ],
+      "goal": "把日子过下去",
+      "identity": "沈家父亲，三十八岁上下，下岗工人",
+      "knowledge": [
+        "儿子把功劳推给了他"
+      ],
+      "location": "沈家堂屋",
+      "open_threads": [
+        "病何时被戳破"
+      ],
+      "relationships": [
+        "沈亦舟：父子，第一次平视",
+        "李秀兰：夫妻"
+      ],
+      "state": "第一次正眼看儿子，看了很久，只说了句吃饭"
+    },
+    "王浩": {
+      "abilities_resources": [],
+      "goal": "看完全程",
+      "identity": "沈亦舟的同桌，同院的孩子",
+      "knowledge": [
+        "那三句问崩了舅舅"
+      ],
+      "location": "沈家院门口与堂屋",
+      "open_threads": [],
+      "relationships": [
+        "沈亦舟：同桌班底"
+      ],
+      "state": "起鸡皮疙瘩，负责报幕"
+    },
+    "陈小满": {
+      "abilities_resources": [
+        "和面、看火"
+      ],
+      "goal": "把摊子的活干完，供弟弟读书",
+      "identity": "隔壁院的女孩，八岁，家里开早点铺",
+      "knowledge": [
+        "他把最热的那个拿走了（她没在意）"
+      ],
+      "location": "路口的陈家早点摊",
+      "open_threads": [
+        "她不入镜（ch053 第二次）"
+      ],
+      "relationships": [
+        "沈亦舟：邻居与同学（她只当是顺手）"
+      ],
+      "state": "忙。手上总有一股碱面味，说话不超过三十个字一句"
+    },
+    "陈默": {
+      "abilities_resources": [],
+      "goal": "把书摆齐，把试考好",
+      "identity": "同班同学，考第一",
+      "knowledge": [
+        "他昨天说了看手"
+      ],
+      "location": "小学教室",
+      "open_threads": [],
+      "relationships": [
+        "沈亦舟：同学（不熟）",
+        "王浩：同学"
+      ],
+      "state": "安静。书脊朝外一本一本对齐，从不举手"
+    }
+  },
+  "context": {
+    "active_character_names": [
+      "沈亦舟",
+      "沈建国",
+      "李秀兰",
+      "王浩",
+      "李国强"
+    ],
+    "continuity_risks": [
+      "他知道老爸的病，老爸不知道，不许任何人点破",
+      "他不解释本事的来源，被问只答看的或猜的",
+      "代价账本的回收章号细纲未给，暂排 107，卷末过堂定",
+      "ch016 二次打脸不许原样复用我听我爸说的",
+      "她必须完全是个普通邻家女孩，不许有任何意味深长"
+    ],
+    "long_term_constraints": [
+      "C101：老爸的病是本世唯一改成功的一条，不许推翻",
+      "倒叙钩子（ch001 前 260 字）之后全书不再闪回",
+      "重生/穿越/前世/系统 四词全篇零出现",
+      "章尾末句必须是名词或动作",
+      "第三人称限知，POV=沈亦舟",
+      "叙事只写看见的，望诊的话必须土（禁中医术语）"
+    ],
+    "next_chapter_commitments": [
+      "ch004：他推动老爸去体检（承接 ch003 章尾烟头钩子）"
+    ],
+    "position": {
+      "scene": "洛州城南机床厂家属院·沈家堂屋",
+      "story_time": "2000年9月·一顿饭的工夫",
+      "volume": "第一卷·童年局",
+      "volume_start_chapter": 1
+    },
+    "recent_chapters": [
+      {
+        "chapter": 1,
+        "summary": "地点别名补登（revision）：家属院增别名院门口；新登沈家（别名自家门口）。"
+      },
+      {
+        "chapter": 2,
+        "summary": "他记得院门口有棵槐树，老妈说一直都没有，他哦了一声就走。巷口张家的车丢了。她把最热的包子留给他，他谢了声就忘了。合影上她那个位置是糊的。他在她家铺子说碱放早了，第二天汤真清了。回家递扳手时看见老爸指甲盖发白、腿麻扶墙。他倒水，杯把手朝外。"
+      },
+      {
+        "chapter": 3,
+        "summary": "舅舅拎酒上门踩老爸：你这辈子也就这样了。一句别学你爸点着了他。他连问三句：东郊、货压着、订金，把三十万的大单问崩。舅舅打电话求证，手在抖，酒没喝就走，留一句这孩子邪门。他把功劳推给老爸。老爸第一次正眼看他，只说了句吃饭。"
+      }
+    ]
+  },
+  "evidence": {
+    "W001": {
+      "anchor": "放的时候，他把杯把手转了一下，朝外。",
+      "chapter": 1,
+      "holder": "沈亦舟",
+      "id": "W001",
+      "keywords": [
+        "杯把手朝外"
+      ],
+      "name": "那杯水",
+      "status": "held",
+      "updated_chapter": 1
+    },
+    "W002": {
+      "anchor": "暖壶是红的，壶身上画着两朵牡丹，掉了色。",
+      "chapter": 1,
+      "holder": "沈家",
+      "id": "W002",
+      "keywords": [
+        "暖壶"
+      ],
+      "name": "红暖壶",
+      "status": "held",
+      "updated_chapter": 1
+    },
+    "W003": {
+      "anchor": "角落里那个位置，人脸是糊的，一团白，五官看不清，只剩一个发卡的形状。",
+      "chapter": 2,
+      "holder": "沈亦舟",
+      "id": "W003",
+      "keywords": [
+        "合影",
+        "不入镜"
+      ],
+      "name": "全班合影",
+      "status": "held",
+      "updated_chapter": 2
+    },
+    "W004": {
+      "anchor": "拿了两瓶，又放下一瓶，把那瓶往桌中间推了推，推正了。",
+      "chapter": 3,
+      "holder": "沈家",
+      "id": "W004",
+      "keywords": [
+        "两瓶酒",
+        "八仙桌"
+      ],
+      "name": "留下的那瓶酒",
+      "status": "held",
+      "updated_chapter": 3
+    }
+  },
+  "foreshadow": {
+    "F001": {
+      "id": "F001",
+      "importance": "高",
+      "planned_resolution_chapter": 194,
+      "planted_chapter": 1,
+      "reveal_method": "慢镜头",
+      "status": "已埋",
+      "summary": "那杯水：放杯时把杯把手转一下朝外，ch194 回收",
+      "updated_chapter": 1
+    },
+    "F002": {
+      "id": "F002",
+      "importance": "高",
+      "planned_resolution_chapter": 15,
+      "planted_chapter": 1,
+      "reveal_method": "一句带过",
+      "status": "已埋",
+      "summary": "老爸的病：眼白发黄、指头抖，儿子看见没说（C101）",
+      "updated_chapter": 1
+    },
+    "F003": {
+      "id": "F003",
+      "importance": "高",
+      "planned_resolution_chapter": 183,
+      "planted_chapter": 1,
+      "reveal_method": "一句带过",
+      "status": "已埋",
+      "summary": "那句没听完的话：倒叙钩子里的悬念，ch183 回收",
+      "updated_chapter": 1
+    },
+    "F004": {
+      "id": "F004",
+      "importance": "高",
+      "planned_resolution_chapter": 107,
+      "planted_chapter": 2,
+      "reveal_method": "一句带过",
+      "status": "已埋",
+      "summary": "记忆偏移：他记得院门口有棵槐树，实际没有，ch107 回收",
+      "updated_chapter": 2
+    },
+    "F005": {
+      "id": "F005",
+      "importance": "中",
+      "planned_resolution_chapter": 107,
+      "planted_chapter": 2,
+      "reveal_method": "一句带过",
+      "status": "已埋",
+      "summary": "代价账本第一次：与他不相关的张家丢车小祸，回收章待定（暂排 107）",
+      "updated_chapter": 2
+    },
+    "F006": {
+      "id": "F006",
+      "importance": "高",
+      "planned_resolution_chapter": 53,
+      "planted_chapter": 2,
+      "reveal_method": "一句带过",
+      "status": "已埋",
+      "summary": "她不入镜第一次：班级合影上她的位置是糊的，ch053 二次",
+      "updated_chapter": 2
+    },
+    "F007": {
+      "id": "F007",
+      "importance": "高",
+      "planned_resolution_chapter": 16,
+      "planted_chapter": 3,
+      "reveal_method": "当场短路",
+      "status": "已埋",
+      "summary": "舅舅的后患：一句这孩子邪门走人，ch016 二次打脸",
+      "updated_chapter": 3
+    }
+  },
+  "geo": {
+    "G001": {
+      "aliases": [
+        "院里",
+        "院门口"
+      ],
+      "anchor": "院门口蹲着几个下班的男人，墙根支着自行车，车把上搭着网兜。",
+      "chapter": 1,
+      "direction": "南",
+      "id": "G001",
+      "keywords": [
+        "家属院",
+        "院门口",
+        "院里"
+      ],
+      "name": "机床厂家属院",
+      "ref": "沈家",
+      "updated_chapter": 1
+    },
+    "G002": {
+      "aliases": [
+        "铺子",
+        "路口的摊子"
+      ],
+      "anchor": "她家的早点摊在路口。案板上摞着笼屉，四层。",
+      "chapter": 2,
+      "direction": "南",
+      "id": "G002",
+      "keywords": [
+        "早点摊",
+        "笼屉",
+        "路口"
+      ],
+      "name": "陈家早点摊",
+      "ref": "陈小满家",
+      "updated_chapter": 2
+    },
+    "G003": {
+      "aliases": [
+        "铁皮箱子"
+      ],
+      "anchor": "院里有一个公用电话，装在墙上的铁皮箱子里，投币的。",
+      "chapter": 3,
+      "direction": "南",
+      "id": "G003",
+      "keywords": [
+        "公用电话",
+        "投币"
+      ],
+      "name": "院里的公用电话",
+      "ref": "家属院",
+      "updated_chapter": 3
+    },
+    "G004": {
+      "aliases": [
+        "自家门口"
+      ],
+      "anchor": "他走到自家门口的时候，听见屋里有人说话。",
+      "chapter": 1,
+      "direction": "北",
+      "id": "G004",
+      "keywords": [
+        "沈家",
+        "自家门口",
+        "堂屋"
+      ],
+      "name": "沈家",
+      "ref": "机床厂家属院",
+      "updated_chapter": 1
+    }
+  },
+  "imported_through_chapter": 0,
+  "last_committed_chapter": 3,
+  "scenes": {
+    "S001": {
+      "anchor": "教室里桌椅摆得很齐，桌角都用粉笔编了号。",
+      "chapter": 2,
+      "current": "报到与全班合影",
+      "id": "S001",
+      "keywords": [
+        "教室",
+        "报到",
+        "合影"
+      ],
+      "name": "教室",
+      "status": "active",
+      "updated_chapter": 2
+    },
+    "S002": {
+      "anchor": "饭摆上来。四个菜：拍黄瓜、炒土豆丝、一盘花生米，还有一盘鸡蛋。",
+      "chapter": 3,
+      "current": "舅舅的饭局散了",
+      "id": "S002",
+      "keywords": [
+        "堂屋",
+        "饭桌"
+      ],
+      "name": "沈家堂屋",
+      "status": "active",
+      "updated_chapter": 3
+    },
+    "S003": {
+      "anchor": "天还没黑，灯泡已经开了，光是黄的。锅上坐着一桶汤。",
+      "chapter": 2,
+      "current": "碱放早了",
+      "id": "S003",
+      "keywords": [
+        "铺子",
+        "汤锅",
+        "碱罐子"
+      ],
+      "name": "陈家早点摊",
+      "status": "active",
+      "updated_chapter": 2
+    }
+  },
+  "schema_version": 7,
+  "state_revision": 4,
+  "timeline": {
+    "E001": {
+      "characters": [
+        "沈亦舟",
+        "李婶",
+        "王浩"
+      ],
+      "first_recorded_chapter": 1,
+      "id": "E001",
+      "objective_fact": "他说李婶家孩子是要抽，嘱咐别让他睡沉；当夜孩子抽搐送医，医生说法与他一字不差。",
+      "reader_knowledge": "读者已知：这孩子有本事，无人知来源",
+      "reveal_chapter": 1,
+      "reveal_status": "已揭示",
+      "story_time": "2000年9月·开学第一天",
+      "updated_chapter": 1
+    },
+    "E002": {
+      "characters": [
+        "李国强",
+        "沈建国",
+        "沈亦舟"
+      ],
+      "first_recorded_chapter": 1,
+      "id": "E002",
+      "objective_fact": "李国强登门羞辱沈建国：你这辈子也就这样了。全家无人接话。",
+      "reader_knowledge": "读者已知：这家很穷且被人看不起",
+      "reveal_chapter": 1,
+      "reveal_status": "已揭示",
+      "story_time": "2000年9月·同日傍晚",
+      "updated_chapter": 1
+    },
+    "E003": {
+      "characters": [
+        "沈亦舟",
+        "李秀兰",
+        "张叔"
+      ],
+      "first_recorded_chapter": 2,
+      "id": "E003",
+      "objective_fact": "他问起院门口的槐树，老妈说一直都没有；同日巷口张家的车丢了，锁是好的。两件事他没往一块儿想。",
+      "reader_knowledge": "读者已知：他的记忆对不上",
+      "reveal_chapter": 2,
+      "reveal_status": "部分揭示",
+      "story_time": "2000年9月·开学第二天",
+      "updated_chapter": 2
+    },
+    "E004": {
+      "characters": [
+        "沈亦舟",
+        "陈小满"
+      ],
+      "first_recorded_chapter": 2,
+      "id": "E004",
+      "objective_fact": "他在陈家铺子说碱放早了，次日汤真清了；她妈塞了个茶叶蛋给他，他没推掉。",
+      "reader_knowledge": "读者已知：他不觉得这是本事",
+      "reveal_chapter": 2,
+      "reveal_status": "已揭示",
+      "story_time": "2000年9月·第三天",
+      "updated_chapter": 2
+    },
+    "E005": {
+      "characters": [
+        "沈亦舟",
+        "李国强",
+        "沈建国"
+      ],
+      "first_recorded_chapter": 3,
+      "id": "E005",
+      "objective_fact": "李国强上门炫耀东郊三十万建材大单并羞辱沈建国；沈亦舟三问问崩，李国强当场打电话求证后离席。",
+      "reader_knowledge": "读者已知：他借小孩身份说话，功劳给了老爸",
+      "reveal_chapter": 3,
+      "reveal_status": "已揭示",
+      "story_time": "2000年9月·一顿饭的工夫",
+      "updated_chapter": 3
+    }
+  },
+  "verdicts": {
+    "V001": {
+      "chapter": 1,
+      "event": "望诊李婶家孩子",
+      "id": "V001",
+      "keywords": [
+        "望诊",
+        "看手",
+        "第三方认证"
+      ],
+      "status": "active",
+      "updated_chapter": 1,
+      "verdict": "他看得见别人看不见的东西，只立现象不解释来源"
+    },
+    "V002": {
+      "chapter": 2,
+      "event": "碱放早了",
+      "id": "V002",
+      "keywords": [
+        "碱放早了",
+        "专业小赢",
+        "不解释原理"
+      ],
+      "status": "active",
+      "updated_chapter": 2,
+      "verdict": "他不炫技：随口一句，说完就忘，是她妈记住了"
+    },
+    "V003": {
+      "chapter": 3,
+      "event": "三问问崩三十万",
+      "id": "V003",
+      "keywords": [
+        "订金",
+        "装乖",
+        "大打脸"
+      ],
+      "status": "active",
+      "updated_chapter": 3,
+      "verdict": "全书第一次大打脸：智性打脸、当众、有围观者；赢完把功劳推给老爸"
+    }
+  }
 }
