@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "mode": "append",
+  "chapter": 6,
+  "chapter_title": "那张纸",
+  "expected_state_revision": 8,
+  "delta": {
+    "result": "陪老爸拿体检结果。医生说了三个词他一个没听懂。单子上有个箭头朝上，他看了三遍才明白朝上是坏。回家路上老爸买了两根冰棍，他把少喝酒说到底。第二天小满替人顶错，被他当场否掉。他把化验单折成三折塞进课本。",
+    "character_changes": [
+      {"name": "沈亦舟", "change": "知道结果，一个字没说破，只把少喝酒说到底；当场否掉小满顶错，事后才问她为什么"},
+      {"name": "沈建国", "change": "被医生说运气好，没听懂；答应少喝，回头就把两根冰棍都吃了"},
+      {"name": "陈小满", "change": "替人顶错，被点破昨天根本不在教室；她说反正也不是什么大事，说完去擦黑板"}
+    ],
+    "foreshadow_changes": [
+      {
+        "action": "upsert",
+        "id": "F008",
+        "summary": "老爸问起自己父亲走的时候是啥毛病，老妈答是肝——ch006 体检结果（大三阳／转氨酶高／脾大）已兑现，转为长线",
+        "planted_chapter": 4,
+        "planned_resolution_chapter": 6,
+        "status": "已回收",
+        "importance": "中",
+        "reveal_method": "一句带过"
+      },
+      {
+        "action": "upsert",
+        "id": "F010",
+        "summary": "她书包带子断了一根，用尼龙绳系着，他看了一眼没追上去——ch010 他给她带伞、ch020 她家出事",
+        "planted_chapter": 6,
+        "planned_resolution_chapter": 10,
+        "status": "已埋",
+        "importance": "中",
+        "reveal_method": "一句带过"
+      }
+    ],
+    "timeline_events": [
+      {
+        "action": "upsert",
+        "id": "E008",
+        "story_time": "2000年9月·体检后的第二天",
+        "objective_fact": "体检结果出来：大三阳、转氨酶高、脾大。他知道这是什么，老爸只知道医生说自己运气好",
+        "reader_knowledge": "读者已知：老爸的病被医生点出来了，严重到什么程度只有儿子明白",
+        "reveal_status": "已揭示",
+        "reveal_chapter": 6,
+        "characters": ["沈亦舟", "沈建国"]
+      }
+    ],
+    "verdict_changes": [
+      {
+        "action": "upsert",
+        "id": "V006",
+        "chapter": 6,
+        "event": "他把是病两个字咽回去，只说少喝酒",
+        "verdict": "他改得了事情，改不动别人的选择；知道却不能说，是全书的核心矛盾",
+        "status": "active",
+        "keywords": ["咽回去", "只说少喝酒", "不能说破"]
+      }
+    ],
+    "evidence_changes": [
+      {
+        "action": "upsert",
+        "id": "W007",
+        "chapter": 6,
+        "name": "那张化验单",
+        "anchor": "单子上有个箭头，朝上。",
+        "status": "held",
+        "holder": "沈亦舟",
+        "keywords": ["化验单", "箭头朝上", "折成三折"]
+      }
+    ],
+    "geo_changes": [
+      {
+        "action": "upsert",
+        "id": "G006",
+        "chapter": 6,
+        "name": "医院",
+        "aliases": ["第三诊室", "走廊", "缴费窗口"],
+        "anchor": "医院走廊里坐满了人。",
+        "ref": "洛州城南",
+        "direction": "东",
+        "keywords": ["医院", "塑料椅", "叫号喇叭"]
+      }
+    ],
+    "scene_changes": [
+      {
+        "action": "upsert",
+        "id": "S006",
+        "chapter": 6,
+        "name": "医院走廊与第三诊室",
+        "anchor": "医院走廊里坐满了人。",
+        "status": "active",
+        "current": "拿体检结果：大三阳、转氨酶高、脾大",
+        "keywords": ["医院", "消毒水", "听诊器"]
+      }
+    ],
+    "retired_context_items": [
+      "ch016 二次打脸不许原样复用我听我爸说的"
+    ],
+    "next_chapter_commitments": [
+      "ch007：刘虎收过路费，他用巧劲制服，不打架不流血不留证据"
+    ],
+    "constraints": [
+      "全章手字 1（细纲上限 2）",
+      "小满站起来不许写表情、不许写犹豫，她站得很快"
+    ]
+  },
+  "context": {
+    "position": {
+      "volume": "第一卷·童年局",
+      "volume_start_chapter": 1,
+      "story_time": "2000年9月·体检那天与第二天",
+      "scene": "医院 → 回家的路 → 教室"
+    },
+    "long_term_constraints": [
+      "C101：老爸的病是本世唯一改成功的一条，不许推翻",
+      "倒叙钩子（ch001 前 260 字）之后全书不再闪回",
+      "重生/穿越/前世/系统 四词全篇零出现",
+      "章尾末句必须是名词或动作",
+      "第三人称限知，POV=沈亦舟",
+      "叙事只写看见的，望诊的话必须土（禁中医术语）"
+    ],
+    "active_character_names": ["沈亦舟", "沈建国", "陈小满", "李秀兰", "陈默"],
+    "continuity_risks": [
+      "他知道老爸的病，老爸不知道，不许任何人点破",
+      "他不解释本事的来源，被问只答看的或猜的",
+      "代价账本第 2 笔已在 ch005 章尾落账（公用水龙头裂了），下一笔在 ch010",
+      "小满的善意不是伏笔、不回收，不许写成只对她一个人好",
+      "她必须完全是个普通邻家女孩，不许有任何意味深长"
+    ]
+  },
+  "character_snapshots": {
+    "沈亦舟": {
+      "identity": "沈家儿子，九岁，小学三年级",
+      "location": "教室",
+      "goal": "忍到不能再忍，借小孩的身份说话",
+      "state": "知道结果，一个字没说破；把化验单折成三折塞进课本最里头",
+      "abilities_resources": ["望诊", "看得两分钟就会，改完即忘"],
+      "relationships": ["沈建国：父子，他在推，老爸不知道", "陈小满：她替他顶过一次错"],
+      "knowledge": ["老爸的病：大三阳、转氨酶高、脾大", "他记得这个病的结局"],
+      "open_threads": ["说破的那一天"]
+    },
+    "沈建国": {
+      "identity": "沈家父亲，三十八岁上下，下岗工人",
+      "location": "沈家",
+      "goal": "把日子过下去",
+      "state": "被医生说运气好，没听懂；答应戒酒，转头把两根冰棍都吃了",
+      "abilities_resources": ["会修自行车"],
+      "relationships": ["沈亦舟：父子，觉得这孩子管得宽", "李秀兰：夫妻"],
+      "knowledge": ["医生说自己运气好"],
+      "open_threads": ["下次去复查要家里人陪着"]
+    },
+    "陈小满": {
+      "identity": "同班同学，家里开早点铺",
+      "location": "教室",
+      "goal": "无（她从不为什么）",
+      "state": "替人顶错被点破，只说反正也不是什么大事，说完去擦黑板",
+      "abilities_resources": ["会发面、懂碱"],
+      "relationships": ["沈亦舟：同桌上下，她对谁都这样"],
+      "knowledge": ["她昨天根本不在教室"],
+      "open_threads": ["书包带子断了一根，用尼龙绳系着"]
+    }
+  }
+}

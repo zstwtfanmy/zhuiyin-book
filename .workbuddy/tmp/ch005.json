@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "mode": "append",
+  "chapter": 5,
+  "chapter_title": "网吧",
+  "expected_state_revision": 7,
+  "delta": {
+    "result": "他跟陈默进网吧，那孩子面前不是游戏，是一屏黑底白字，卡了三天。他看了两分钟，改三行，跑通。陈默问怎么会的，他说不知道；问改哪儿，他已经忘了。他立规矩：周三你去，周六我教你，别问从哪儿学的。回家时院里公用水龙头裂了，水漫了半个院子。",
+    "character_changes": [
+      {"name": "沈亦舟", "change": "手自己会、说不出步骤；收下陈默当第一个人，立规矩不许问从哪儿学的；忽然想起互联网要出事，想不起哪天哪一家"},
+      {"name": "陈默", "change": "卡了三天的 bug 被两分钟改通，死心塌地跟了他；答应每周两次，被明令不许问为什么；手腕上的红印他没问"}
+    ],
+    "foreshadow_changes": [
+      {
+        "action": "upsert",
+        "id": "F009",
+        "summary": "陈默手腕上一道红印，边缘很齐，不像自己摔的；他没问——陈默的家事线埋种，ch013 前后展开",
+        "planted_chapter": 5,
+        "planned_resolution_chapter": 13,
+        "status": "已埋",
+        "importance": "中",
+        "reveal_method": "一句带过"
+      }
+    ],
+    "timeline_events": [
+      {
+        "action": "upsert",
+        "id": "E007",
+        "story_time": "2000年9月·一个下午到傍晚",
+        "objective_fact": "陈默入伙：周三陈默去网吧，周六来沈家，他被明令不许问从哪儿学的；班底第一位成员落位",
+        "reader_knowledge": "读者已知：这孩子收了个跟班，规矩是他定的，理由一个字没给",
+        "reveal_status": "已揭示",
+        "reveal_chapter": 5,
+        "characters": ["沈亦舟", "陈默"]
+      }
+    ],
+    "verdict_changes": [
+      {
+        "action": "upsert",
+        "id": "V005",
+        "chapter": 5,
+        "event": "两分钟改通卡了三天的 bug",
+        "verdict": "他会做、写不出步骤：手自己会，改完立刻忘——金手指是失忆症，不是记忆调取",
+        "status": "active",
+        "keywords": ["失忆症", "手自己会", "说不出步骤"]
+      }
+    ],
+    "evidence_changes": [
+      {
+        "action": "upsert",
+        "id": "W006",
+        "chapter": 5,
+        "name": "陈默的算术本",
+        "anchor": "陈默从书包里拿出一个本子，是算术本，封面上有橡皮蹭过的黑印。",
+        "status": "held",
+        "holder": "陈默",
+        "keywords": ["算术本", "抄代码"]
+      }
+    ],
+    "geo_changes": [
+      {
+        "action": "upsert",
+        "id": "G005",
+        "chapter": 5,
+        "name": "巷口的网吧",
+        "aliases": ["网吧", "那条窄巷"],
+        "anchor": "巷子口有家网吧。",
+        "ref": "洛州城南",
+        "direction": "南",
+        "keywords": ["网吧", "三元一小时", "包夜十元"]
+      }
+    ],
+    "scene_changes": [
+      {
+        "action": "upsert",
+        "id": "S005",
+        "chapter": 5,
+        "name": "巷口的网吧",
+        "anchor": "门口挂着塑料条帘子，一条一条，脏得发灰。",
+        "status": "active",
+        "current": "陈默在学写程序，卡了三天；他改三行跑通",
+        "keywords": ["网吧", "烟味", "CRT", "泡面"]
+      }
+    ],
+    "retired_context_items": [
+      "代价账本第 2 笔（公用水龙头裂了）落在 ch005 章尾，只写一行，不解释、不回头看"
+    ],
+    "next_chapter_commitments": [
+      "ch006：体检结果出来，他把是病两个字咽回去，只说少喝酒；小满替他顶了一次错"
+    ],
+    "constraints": [
+      "陈默手腕的红印本章只点两处（章首、章尾），不追问不解释",
+      "他不问问题：全章主角台词无问号"
+    ]
+  },
+  "context": {
+    "position": {
+      "volume": "第一卷·童年局",
+      "volume_start_chapter": 1,
+      "story_time": "2000年9月·一个下午到傍晚",
+      "scene": "洛州城南·巷口的网吧"
+    },
+    "long_term_constraints": [
+      "C101：老爸的病是本世唯一改成功的一条，不许推翻",
+      "倒叙钩子（ch001 前 260 字）之后全书不再闪回",
+      "重生/穿越/前世/系统 四词全篇零出现",
+      "章尾末句必须是名词或动作",
+      "第三人称限知，POV=沈亦舟",
+      "叙事只写看见的，望诊的话必须土（禁中医术语）"
+    ],
+    "active_character_names": ["沈亦舟", "陈默", "王浩", "沈建国", "李秀兰"],
+    "continuity_risks": [
+      "他知道老爸的病，老爸不知道，不许任何人点破",
+      "他不解释本事的来源，被问只答看的或猜的",
+      "代价账本第 2 笔已在 ch005 章尾落账（公用水龙头裂了），下一笔在 ch010",
+      "ch016 二次打脸不许原样复用我听我爸说的",
+      "她必须完全是个普通邻家女孩，不许有任何意味深长"
+    ]
+  },
+  "character_snapshots": {
+    "沈亦舟": {
+      "identity": "沈家儿子，九岁，小学三年级",
+      "location": "巷口的网吧",
+      "goal": "先攒人再收事，不急着赚钱",
+      "state": "手自己会、说不出步骤；收了第一个人，也第一次明说记不清（互联网要出事，想不起哪天哪一家）",
+      "abilities_resources": ["望诊", "看得两分钟就会，改完即忘"],
+      "relationships": ["陈默：他定规矩，不许问为什么", "沈建国：父子"],
+      "knowledge": ["老爸的病", "这两年互联网要出事，但记不清哪天哪一家"],
+      "open_threads": ["周六教陈默什么"]
+    },
+    "陈默": {
+      "identity": "同班同学，家里开小卖部，父亲酗酒",
+      "location": "巷口的网吧",
+      "goal": "会一样别人不会的东西",
+      "state": "卡三天的东西被人两分钟改通，服了；被明令不许问从哪儿学的，他记了一辈子",
+      "abilities_resources": ["自学写程序（照着敲）"],
+      "relationships": ["沈亦舟：他从心里服，但不问为什么", "父亲：怕"],
+      "knowledge": ["这孩子看得两分钟就会"],
+      "open_threads": ["手腕上的红印没人问"]
+    }
+  }
+}

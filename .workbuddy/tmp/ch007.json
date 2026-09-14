@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "mode": "append",
+  "chapter": 7,
+  "chapter_title": "巧劲",
+  "expected_state_revision": 9,
+  "delta": {
+    "result": "刘虎在砖厂后头收过路费。他放下书包，脱了外套叠成方块压在上面，侧半步搭肘一带，刘虎自己撞上砖垛；第二次扣手腕下压，刘虎跪了，不到十秒。他抬起脚又放下，没踢。走后墙根一只鞋，台阶上一只鞋。",
+    "character_changes": [
+      {
+        "name": "沈亦舟",
+        "change": "第一次管闲事：脱外套叠好再动手，十秒放倒两次，抬起脚又放下不肯补，只留一句明天别在这儿收钱了"
+      },
+      {
+        "name": "刘虎",
+        "change": "五年级孩子王，收过路费一人五毛；被九岁孩子放倒两次，鞋掉了两只不在一处，举着棍子没敢落"
+      }
+    ],
+    "foreshadow_changes": [
+      {
+        "action": "upsert",
+        "id": "F011",
+        "summary": "排队交钱那三个里最小的那个，抱着书包一直看他走远，看到看不见了还站着——ch008 那孩子开口说你打架像我哥",
+        "planted_chapter": 7,
+        "planned_resolution_chapter": 8,
+        "status": "已埋",
+        "importance": "中",
+        "reveal_method": "一句带过"
+      }
+    ],
+    "timeline_events": [
+      {
+        "action": "upsert",
+        "id": "E009",
+        "story_time": "2000年9月·放学后",
+        "objective_fact": "他在砖厂后头用巧劲放倒收过路费的刘虎两次，没有打架、没有流血、没有留伤",
+        "reader_knowledge": "读者已知：这个九岁孩子会动手，而且懂得不下重手",
+        "reveal_status": "已揭示",
+        "reveal_chapter": 7,
+        "characters": [
+          "沈亦舟",
+          "刘虎"
+        ]
+      }
+    ],
+    "verdict_changes": [
+      {
+        "action": "upsert",
+        "id": "V007",
+        "chapter": 7,
+        "event": "他抬起脚又放下，说我不打你",
+        "verdict": "他知道怎么赢，也知道赢了之后该收手；这一脚不落下去比落下去更有力",
+        "status": "active",
+        "keywords": [
+          "不落下去",
+          "我不打你",
+          "收手"
+        ]
+      }
+    ],
+    "evidence_changes": [
+      {
+        "action": "upsert",
+        "id": "W008",
+        "chapter": 7,
+        "name": "刘虎的两只鞋",
+        "anchor": "墙根上一只鞋，台阶上一只鞋。",
+        "status": "transferred",
+        "holder": "无人",
+        "keywords": [
+          "两只鞋",
+          "两毛票子",
+          "碎砖"
+        ]
+      }
+    ],
+    "geo_changes": [
+      {
+        "action": "upsert",
+        "id": "G007",
+        "chapter": 7,
+        "name": "砖厂后头空地",
+        "aliases": [
+          "砖垛",
+          "空地",
+          "回院的路"
+        ],
+        "anchor": "一块压平的土地，边上摞着砖垛。",
+        "ref": "砖厂南墙外",
+        "direction": "南",
+        "keywords": [
+          "砖垛",
+          "旧轮胎",
+          "烟囱",
+          "回院的路"
+        ]
+      }
+    ],
+    "scene_changes": [
+      {
+        "action": "upsert",
+        "id": "S007",
+        "chapter": 7,
+        "name": "砖厂后头空地·收过路费",
+        "anchor": "刘虎比他高两个头。",
+        "status": "active",
+        "current": "三个小孩排队交五毛，他把外套叠成方块压在书包上，十秒放倒刘虎两次",
+        "keywords": [
+          "过路费",
+          "叠外套",
+          "砖垛",
+          "木棍"
+        ]
+      }
+    ],
+    "retired_context_items": [
+      "ch007：刘虎收过路费，他用巧劲制服，不打架不流血不留证据",
+      "他不解释本事的来源，被问只答看的或猜的"
+    ],
+    "next_chapter_commitments": [
+      "ch008：那孩子开口说你打架像我哥，引出他哥哥这条线"
+    ],
+    "constraints": [
+      "全章不许出现任何武术术语，只写动作与结果",
+      "他不问问题，台词短，最长一句是明天别在这儿收钱了"
+    ]
+  },
+  "context": {
+    "position": {
+      "volume": "第一卷·童年局",
+      "volume_start_chapter": 1,
+      "story_time": "2000年9月·放学后",
+      "scene": "砖厂后头空地 → 回院的路口"
+    },
+    "active_character_names": [
+      "沈亦舟",
+      "沈建国",
+      "陈小满",
+      "李秀兰",
+      "陈默",
+      "刘虎"
+    ],
+    "continuity_risks": [
+      "他知道老爸的病，老爸不知道，不许任何人点破",
+      "代价账本第 2 笔已在 ch005 章尾落账（公用水龙头裂了），下一笔在 ch010",
+      "小满的善意不是伏笔、不回收，不许写成只对她一个人好",
+      "她必须完全是个普通邻家女孩，不许有任何意味深长",
+      "他不解释本事的来源，被问只答看的或猜的；打架只写动作与结果，不许出现武术术语"
+    ],
+    "long_term_constraints": [
+      "C101：老爸的病是本世唯一改成功的一条，不许推翻",
+      "倒叙钩子（ch001 前 260 字）之后全书不再闪回",
+      "重生/穿越/前世/系统 四词全篇零出现",
+      "章尾末句必须是名词或动作",
+      "第三人称限知，POV=沈亦舟",
+      "叙事只写看见的，望诊的话必须土（禁中医术语）"
+    ]
+  },
+  "character_snapshots": {
+    "沈亦舟": {
+      "identity": "沈家儿子，九岁，小学三年级",
+      "location": "砖厂后头空地",
+      "goal": "让这条路不用交钱，别的事不管",
+      "state": "第一次管闲事，赢完就收手，不肯补一脚",
+      "abilities_resources": [
+        "望诊",
+        "看得两分钟就会，改完即忘",
+        "巧劲"
+      ],
+      "relationships": [
+        "沈建国：父子，他在推，老爸不知道",
+        "刘虎：被他放倒，不服"
+      ],
+      "knowledge": [
+        "怎么让人自己撞上墙",
+        "这一脚不能落"
+      ],
+      "open_threads": [
+        "他为什么不肯打",
+        "那孩子为什么一直看他"
+      ]
+    },
+    "刘虎": {
+      "identity": "五年级，砖厂后头那片的孩子王",
+      "location": "砖厂后头空地",
+      "goal": "把过路费收下去",
+      "state": "被放倒两次，鞋掉了，棍子举着不敢落",
+      "abilities_resources": [
+        "一根削尖的木棍，是这两天才削的"
+      ],
+      "relationships": [
+        "沈亦舟：被制服，不服"
+      ],
+      "knowledge": [
+        "这小孩不动手却放倒了他"
+      ],
+      "open_threads": [
+        "会不会再拦路"
+      ]
+    }
+  }
+}

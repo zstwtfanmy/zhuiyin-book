@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "mode": "append",
+  "chapter": 8,
+  "chapter_title": "我哥",
+  "expected_state_revision": 10,
+  "delta": {
+    "result": "那小孩在校门口等他，说你打架像我哥。问哥哥在哪儿，答不知道，走了。刘虎没来收钱，说是自己摔的。放学那小孩塞给他一块用剩的橡皮，说欠人的要还。他收了。橡皮上有个牙印，不是他的。",
+    "character_changes": [
+      {
+        "name": "沈亦舟",
+        "change": "第一次收下别人给的东西；追问那孩子哥哥的去向，只得到一句不知道"
+      },
+      {
+        "name": "王浩",
+        "change": "报信刘虎没来、学刘虎自己摔的说法；酸他一块橡皮就被打发，临走甩下一句这事儿包在我身上"
+      },
+      {
+        "name": "抱书包的小孩",
+        "change": "一年级，最小的那个；在校门口等了两回，说你打架像我哥，塞给他一块带牙印的橡皮"
+      }
+    ],
+    "foreshadow_changes": [
+      {
+        "action": "upsert",
+        "id": "F011",
+        "summary": "排队交钱那三个里最小的那个，抱着书包一直看他走远——ch008 已开口：你打架像我哥",
+        "planted_chapter": 7,
+        "planned_resolution_chapter": 8,
+        "status": "已回收",
+        "importance": "中",
+        "reveal_method": "一句带过"
+      },
+      {
+        "action": "upsert",
+        "id": "F012",
+        "summary": "你打架的样子，像我哥→问在哪儿答不知道走了（疑似赵铁柱之弟，ch131 两次死因是同一个动作）；橡皮上的牙印不是他的",
+        "planted_chapter": 8,
+        "planned_resolution_chapter": 131,
+        "status": "已埋",
+        "importance": "高",
+        "reveal_method": "一句带过"
+      }
+    ],
+    "timeline_events": [
+      {
+        "action": "upsert",
+        "id": "E010",
+        "story_time": "2000年9月·第二天",
+        "objective_fact": "那孩子说他打架像我哥，问哥哥在哪儿，答不知道、走了；下午塞给他一块用剩的橡皮",
+        "reader_knowledge": "读者已知：这孩子有个哥哥，走了；去向成谜",
+        "reveal_status": "已揭示",
+        "reveal_chapter": 8,
+        "characters": [
+          "沈亦舟",
+          "抱书包的小孩"
+        ]
+      }
+    ],
+    "verdict_changes": [
+      {
+        "action": "upsert",
+        "id": "V008",
+        "chapter": 8,
+        "event": "他把橡皮收了，这是他头一回收别人的东西",
+        "verdict": "他改得了别人的事，改不动自己那道收下的口子；收下比拒掉更难",
+        "status": "active",
+        "keywords": [
+          "收下",
+          "橡皮",
+          "欠人的要还"
+        ]
+      }
+    ],
+    "evidence_changes": [
+      {
+        "action": "upsert",
+        "id": "W009",
+        "chapter": 8,
+        "name": "那块橡皮",
+        "anchor": "橡皮上有个牙印。",
+        "status": "held",
+        "holder": "沈亦舟",
+        "keywords": [
+          "橡皮",
+          "牙印",
+          "只剩一小块"
+        ]
+      }
+    ],
+    "geo_changes": [
+      {
+        "action": "upsert",
+        "id": "G008",
+        "chapter": 8,
+        "name": "学校",
+        "aliases": [
+          "校门口",
+          "铁门口",
+          "一年级教室",
+          "楼道",
+          "操场",
+          "铁门"
+        ],
+        "anchor": "铁门只开了一扇，另一扇用铁链拴着。",
+        "ref": "洛州城东",
+        "direction": "东",
+        "keywords": [
+          "校门口",
+          "值日生",
+          "红领巾",
+          "路队"
+        ]
+      }
+    ],
+    "scene_changes": [
+      {
+        "action": "upsert",
+        "id": "S008",
+        "chapter": 8,
+        "name": "校门口与放学路",
+        "anchor": "那小孩在校门口等他，等了很久。",
+        "status": "active",
+        "current": "那孩子等他、说你打架像我哥、塞橡皮；回家路上经过铁路道口与粮店",
+        "keywords": [
+          "校门口",
+          "橡皮",
+          "铁路道口",
+          "路队"
+        ]
+      }
+    ],
+    "retired_context_items": [
+      "ch008：那孩子开口说你打架像我哥，引出他哥哥这条线"
+    ],
+    "next_chapter_commitments": [
+      "ch009：按卷一细纲推进；橡皮全书上限 3 次，本章是第 1 次"
+    ],
+    "constraints": [
+      "五句俗话① 这事儿包在我身上 第一次出现在本章（王浩说，说完就走，全书三次）",
+      "那孩子哥哥是谁、与赵铁柱的关系、F012 到底指什么，三者皆不许提前释放"
+    ]
+  },
+  "context": {
+    "position": {
+      "volume": "第一卷·童年局",
+      "volume_start_chapter": 1,
+      "story_time": "2000年9月·打架的第二天",
+      "scene": "校门口 → 教室 → 放学路 → 回家"
+    },
+    "active_character_names": [
+      "沈亦舟",
+      "沈建国",
+      "陈小满",
+      "李秀兰",
+      "陈默",
+      "抱书包的小孩"
+    ],
+    "continuity_risks": [
+      "他知道老爸的病，老爸不知道，不许任何人点破",
+      "代价账本第 2 笔已在 ch005 章尾落账（公用水龙头裂了），下一笔在 ch010",
+      "小满的善意不是伏笔、不回收，不许写成只对她一个人好",
+      "她必须完全是个普通邻家女孩，不许有任何意味深长",
+      "他不解释本事的来源，被问只答看的或猜的；打架只写动作与结果，不许出现武术术语"
+    ],
+    "long_term_constraints": [
+      "C101：老爸的病是本世唯一改成功的一条，不许推翻",
+      "倒叙钩子（ch001 前 260 字）之后全书不再闪回",
+      "重生/穿越/前世/系统 四词全篇零出现",
+      "章尾末句必须是名词或动作",
+      "第三人称限知，POV=沈亦舟",
+      "叙事只写看见的，望诊的话必须土（禁中医术语）"
+    ]
+  },
+  "character_snapshots": {
+    "沈亦舟": {
+      "identity": "沈家儿子，九岁，小学三年级",
+      "location": "学校与放学路",
+      "goal": "问出那孩子哥哥的去向",
+      "state": "第一次收下别人给的东西，攥了一路",
+      "abilities_resources": [
+        "望诊",
+        "看得两分钟就会，改完即忘",
+        "巧劲"
+      ],
+      "relationships": [
+        "沈建国：父子，他在推，老爸不知道",
+        "抱书包的小孩：那孩子认他，他不知道为什么"
+      ],
+      "knowledge": [
+        "那孩子有个哥哥，走了",
+        "橡皮上有个牙印，不是自己的"
+      ],
+      "open_threads": [
+        "那孩子哥哥是谁",
+        "橡皮上的牙印是谁的"
+      ]
+    },
+    "抱书包的小孩": {
+      "identity": "一年级，昨天排队交钱那三个里最小的那个",
+      "location": "学校",
+      "goal": "还上这份人情",
+      "state": "等了两回，塞给他一块用剩的橡皮，扭头就跑又跑回来按了一下",
+      "abilities_resources": [
+        "一块只剩一小块的橡皮"
+      ],
+      "relationships": [
+        "沈亦舟：他认这个人的手法",
+        "哥哥：走了，去向不明"
+      ],
+      "knowledge": [
+        "哥哥说过欠人的要还"
+      ],
+      "open_threads": [
+        "他哥哥是谁",
+        "疑似赵铁柱之弟，ch131 前不许点破"
+      ]
+    },
+    "王浩": {
+      "identity": "沈亦舟的同桌，同院的孩子",
+      "location": "学校",
+      "goal": "看完全程",
+      "state": "报信、学舌、酸了一句，临走甩下这事儿包在我身上",
+      "abilities_resources": [],
+      "relationships": [
+        "沈亦舟：同桌班底"
+      ],
+      "knowledge": [
+        "刘虎昨天回家说是自己摔的",
+        "他收了一块橡皮"
+      ],
+      "open_threads": []
+    }
+  }
+}

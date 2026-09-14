@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "mode": "append",
+  "chapter": 4,
+  "chapter_title": "望闻问切",
+  "expected_state_revision": 6,
+  "delta": {
+    "result": "三次试探全被当小孩糊弄。学校发健康表，他多拿了一份压在课本底下，另一份放在老爸手边，什么都没说。老爸翻到家族史那一栏停住，问起自己父亲走的时候是啥毛病，老妈说是肝。老爸说：我也该去查查。",
+    "character_changes": [
+      {"name": "沈亦舟", "change": "三次试探全被糊弄，改用学校健康表借外力破局，一句话没提病；多拿了一份压在课本底下"},
+      {"name": "沈建国", "change": "翻健康表翻到家族史那一栏停住，问起自己父亲死因，自己说出我也该去查查，把表揣进兜里"},
+      {"name": "李秀兰", "change": "全程不在点上（你爸那是晒的／吃不吃西瓜），被问起公公死因时答是肝"}
+    ],
+    "foreshadow_changes": [
+      {
+        "action": "upsert",
+        "id": "F008",
+        "summary": "老爸问起自己父亲走的时候是啥毛病，老妈答是肝——家族史栏埋下的引线，ch006 体检结果回收",
+        "planted_chapter": 4,
+        "planned_resolution_chapter": 6,
+        "status": "已埋",
+        "importance": "中",
+        "reveal_method": "一句带过"
+      }
+    ],
+    "timeline_events": [
+      {
+        "action": "upsert",
+        "id": "E006",
+        "story_time": "2000年9月·一个礼拜天到周一",
+        "objective_fact": "老爸自己说出我也该去查查，把学校健康表折两折揣进裤兜；这是本世老爸第一次主动要去看病",
+        "reader_knowledge": "读者已知：老爸松口了，是被一张表说动的，不是被儿子说动的",
+        "reveal_status": "已揭示",
+        "reveal_chapter": 4,
+        "characters": ["沈亦舟", "沈建国", "李秀兰"]
+      }
+    ],
+    "verdict_changes": [
+      {
+        "action": "upsert",
+        "id": "V004",
+        "chapter": 4,
+        "event": "望闻问切说漏嘴",
+        "verdict": "他看得见、说不出原理；四个字被老妈当童言带过，全书不许解释",
+        "status": "active",
+        "keywords": ["望闻问切", "童言带过", "不解释"]
+      }
+    ],
+    "evidence_changes": [
+      {
+        "action": "upsert",
+        "id": "W005",
+        "chapter": 4,
+        "name": "学校健康表（两张）",
+        "anchor": "纸是油印的，边上起毛，字是紫的，有几处洇成一团。",
+        "status": "held",
+        "holder": "沈亦舟",
+        "keywords": ["健康表", "家族史", "多出来的那一份"]
+      }
+    ],
+    "scene_changes": [
+      {
+        "action": "upsert",
+        "id": "S001",
+        "chapter": 4,
+        "name": "教室",
+        "anchor": "老师把纸往讲台上一撂，用手掌拍平。",
+        "status": "active",
+        "current": "发健康表，要家长签字、填既往病史与家族史",
+        "keywords": ["教室", "健康表", "油印"]
+      },
+      {
+        "action": "upsert",
+        "id": "S002",
+        "chapter": 4,
+        "name": "沈家堂屋",
+        "anchor": "老爸在堂屋里看报纸。报纸是前天的，翻过来翻过去，看第三遍。",
+        "status": "active",
+        "current": "老爸翻健康表，翻到家族史那一栏停住",
+        "keywords": ["堂屋", "报纸", "健康表"]
+      },
+      {
+        "action": "upsert",
+        "id": "S004",
+        "chapter": 4,
+        "name": "沈家院子",
+        "anchor": "老爸蹲在院当中刷牙。",
+        "status": "active",
+        "current": "刷牙、洗脸、修自行车、晾衣服",
+        "keywords": ["院子", "水管子", "花盆", "铁丝"]
+      }
+    ],
+    "retired_context_items": [
+      "代价账本的回收章号细纲未给，暂排 107，卷末过堂定"
+    ],
+    "next_chapter_commitments": [
+      "ch005：他跟陈默进网吧，发现那孩子不是打游戏是在学写程序，改了几行跑通，班底第一位落位"
+    ],
+    "constraints": [
+      "望闻问切四字全书只此一次，不许解释",
+      "那杯水（杯把手朝外）本章一次，已落"
+    ]
+  },
+  "context": {
+    "position": {
+      "volume": "第一卷·童年局",
+      "volume_start_chapter": 1,
+      "story_time": "2000年9月·一个礼拜天到周一",
+      "scene": "洛州城南机床厂家属院·沈家"
+    },
+    "long_term_constraints": [
+      "C101：老爸的病是本世唯一改成功的一条，不许推翻",
+      "倒叙钩子（ch001 前 260 字）之后全书不再闪回",
+      "重生/穿越/前世/系统 四词全篇零出现",
+      "章尾末句必须是名词或动作",
+      "第三人称限知，POV=沈亦舟",
+      "叙事只写看见的，望诊的话必须土（禁中医术语）"
+    ],
+    "active_character_names": ["沈亦舟", "沈建国", "李秀兰", "王浩", "李国强"],
+    "continuity_risks": [
+      "他知道老爸的病，老爸不知道，不许任何人点破",
+      "他不解释本事的来源，被问只答看的或猜的",
+      "代价账本第 2 笔（公用水龙头裂了）落在 ch005 章尾，只写一行，不解释、不回头看",
+      "ch016 二次打脸不许原样复用我听我爸说的",
+      "她必须完全是个普通邻家女孩，不许有任何意味深长"
+    ]
+  },
+  "character_snapshots": {
+    "沈亦舟": {
+      "identity": "沈家儿子，九岁，小学三年级",
+      "location": "沈家",
+      "goal": "忍到不能再忍，借小孩的身份说话",
+      "state": "三次开口都被当童言，改借外力；老爸松口那句他笔没停",
+      "abilities_resources": ["望诊（看得准，说不出原理）"],
+      "relationships": ["沈建国：父子，他在推，老爸不知道", "李秀兰：母子，她永远不在点上"],
+      "knowledge": ["老爸的病", "离那个日子还有十一个月"],
+      "open_threads": ["多出来的那一份健康表压在课本底下"]
+    },
+    "沈建国": {
+      "identity": "沈家父亲，三十八岁上下，下岗工人",
+      "location": "沈家",
+      "goal": "把日子过下去",
+      "state": "自己说出我也该去查查，把表折两折揣进兜里；夜里跟老妈在院里低声说话",
+      "abilities_resources": ["会修自行车"],
+      "relationships": ["沈亦舟：父子，觉得这孩子最近话多", "李秀兰：夫妻"],
+      "knowledge": ["自己父亲走的时候是肝上的毛病"],
+      "open_threads": ["体检结果未出"]
+    },
+    "李秀兰": {
+      "identity": "沈家母亲，纺织厂下岗女工",
+      "location": "沈家",
+      "goal": "让这个家别散",
+      "state": "永远不在点上：你爸那是晒的／吃不吃西瓜；被问公公死因时答是肝",
+      "abilities_resources": [],
+      "relationships": ["沈建国：夫妻", "沈亦舟：母子，觉得这孩子最近怪"],
+      "knowledge": ["婆家公公死在肝上"],
+      "open_threads": ["她不知道儿子在推什么"]
+    }
+  }
+}
