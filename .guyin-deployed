@@ -1,6 +1,11 @@
 {
-  "deployed_at": "2026-09-04T12:00:00Z",
-  "guyin_version": "1.0.0",
+  "deployed_at": "2026-09-14T16:50:00Z",
+  "guyin_version": "0.10.0",
   "form": "long",
-  "book_name": "追影"
+  "book_name": "追影",
+  "last_updated": {
+    "reason": "重部署执行层部署件（Fw-07 终态语义修复 + beat-writer/checker 同步）",
+    "framework_commit": "3b02aea",
+    "note": ".claude/agents/guyin-beat-writer.md 的 model 行由用户配置（deepseek-flash），replace 后已回填"
+  }
 }

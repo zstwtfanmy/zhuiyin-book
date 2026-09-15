@@ -71,3 +71,16 @@ ch003 一章三次（含两次"指头动"同型）＝超密度，违反语言纪
 **待确认**：`待审台账` 全部标注 `review(solo)`，且 `.codex/agents/guyin-beat-writer.toml` 的 model 行是注释掉的 → **低模型执行层可能从未启用**，前三章疑为主会话所写。
 
 新增文件：`诊断_前三章失吸引力归因.md`（完整证据链 + A/B/C/D 四档改法 + 三个待拍板项）。
+
+## 追踪状态重基线（2026-09-14 完成，revision 11→17）
+
+`_tracking-state.json` 的 ch1-3 记录原属**已删 v10 稿**（例：ch002 记录写「陈默首次登场」，v11 正文里没有陈默）。已按 `mode=revision` 三章重提，`check` 绿。要点：
+- `W004` 登场章原记 ch3 有误 → 改 **chapter=1**（酒瓶首现于 ch001「提到最上一层」）；`W003`/`G002`/`G003`/`G004` 锚句换 v11 原句；`E004` 删「茶叶蛋」。
+- ch1-3 正文已过全闸；`overcompressed`/`prose-fragment-ratio` 不再报警（碎段合并见效）。
+- ⚠ ch4-8 的 `逐章记录` 仍是 v10 血统（正文已不存在）——**若要重写 ch4+ 须同做重基线**。
+
+## 隐笔框架两个机械事实（勿再摸索）
+
+1. `guyin-check-outline-copy.js` 读细纲「复沓锚句」**整块（多行）**；`guyin-check-outline-deliver.js` **只读该字段首行**。→ 功能性原话（样张定稿句／术语四连／契约台词）放**续行**：既免誊抄指控、又不新增落地义务。续行须是正文里**连续 ≥16 字**的原话（脚本先 `hanOnly` 抹掉引号与换行，相邻对白会被并成一句，故要连着写）。
+2. `guyin-tracking-commit.py` revision 语义：`chapter_summaries[N]=delta.result`（**480 字节**硬上限，中文≈160 字）；`context` 须整份重交 4 项；`character_changes` 里的核心角色**必须**同时交当前快照；`next_chapter_commitments` 只在 append 或 `chapter==last_committed` 时进 state，但**决定逐章记录那一行**——revising 旧章要显式传。
+
