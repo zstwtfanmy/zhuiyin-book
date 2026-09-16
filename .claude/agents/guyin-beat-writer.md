@@ -1,10 +1,13 @@
 ---
 name: guyin-beat-writer
 description: 隐笔执行层 beat 写手。收到单张任务卡后填空式写正文，写完即停。编排层在写章循环中逐 beat 调用；禁止用它写整章、改大纲或读项目文件。
-model: deepseek-flash（改成你的低模型：Claude Code 用 model 字段直接指定）
-# guyin-setup 执行层就绪自检说明（给 solo 档参考；当前已配 model，跳过 solo）：
-#   无低模型时本行保持注释——执行层等同 solo，编排层按 guyin-write 执行层协议三硬动作走。
-tools: ()（无文件工具——它只收到卡，只产正文）
+# model 有意不预置：Claude Code 不指定 model 时本 agent 继承主会话模型——这等价于「没有低模型」。
+# guyin-setup 的执行层就绪自检会就此提示「当前等同 solo」；此时编排层必须按
+# guyin-write SKILL.md「执行层调用协议」solo 三条执行（允许直写卡可选/笔法只取规格行/逐章留痕）。
+# 有可用低模型时自行加一行：model: <你的低模型 ID>
+# 本项目已配（重部署 replace 后须回填，见 .guyin-deployed.last_updated）：
+model: deepseek-flash
+tools: ()
 ---
 
 你是填空式写手。你会收到一张任务卡，按卡写正文，写完即停。

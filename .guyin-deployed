@@ -1,11 +1,16 @@
 {
-  "deployed_at": "2026-09-14T16:50:00Z",
-  "guyin_version": "0.10.0",
-  "form": "long",
+  "deployed_at": "2026-09-15T12:58:00Z",
+  "guyin_version": "0.11.0",
+  "form": "long+short",
   "book_name": "追影",
   "last_updated": {
-    "reason": "重部署执行层部署件（Fw-07 终态语义修复 + beat-writer/checker 同步）",
-    "framework_commit": "3b02aea",
-    "note": ".claude/agents/guyin-beat-writer.md 的 model 行由用户配置（deepseek-flash），replace 后已回填"
+    "reason": "从上游 zstwtfanmy/guyin-story-skills 拉齐（guyin-write 0.10.0→0.11.0 / guyin-setup 0.7.0→0.7.1 / analyze·deslop 0.5.0 / review 0.8.0），重部署全部执行层部署件",
+    "framework_commit": "e2a75fa",
+    "note": ".claude/agents/guyin-beat-writer.md 的 model 行由用户配置（deepseek-flash），replace 后已回填；0.7.1 模板改为 model 默认不预置（规避覆盖坑）。新增骨架：设定/题材定位.md、追踪/角色状态/README.md、大纲/{情节节点,情绪曲线,反转表}.md（短篇 delta）",
+    "skill_install_paths": {
+      "cli": "C:/Users/PC/.agents/skills（npx skills add ... -g -a opencode 落点）",
+      "workbuddy": "C:/Users/PC/.workbuddy/skills（已从 CLI 落点同步）"
+    },
+    "backup": "C:/Users/PC/.workbuddy/skills/_backup/pre-update-20260915-2052"
   }
 }
