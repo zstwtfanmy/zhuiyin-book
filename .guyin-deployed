@@ -1,16 +1,18 @@
 {
-  "deployed_at": "2026-09-15T12:58:00Z",
-  "guyin_version": "0.11.0",
+  "deployed_at": "2026-09-17T08:18:26Z",
+  "guyin_version": "0.14.0",
   "form": "long+short",
   "book_name": "追影",
   "last_updated": {
-    "reason": "从上游 zstwtfanmy/guyin-story-skills 拉齐（guyin-write 0.10.0→0.11.0 / guyin-setup 0.7.0→0.7.1 / analyze·deslop 0.5.0 / review 0.8.0），重部署全部执行层部署件",
-    "framework_commit": "e2a75fa",
-    "note": ".claude/agents/guyin-beat-writer.md 的 model 行由用户配置（deepseek-flash），replace 后已回填；0.7.1 模板改为 model 默认不预置（规避覆盖坑）。新增骨架：设定/题材定位.md、追踪/角色状态/README.md、大纲/{情节节点,情绪曲线,反转表}.md（短篇 delta）",
+    "reason": "从上游 zstwtfanmy/guyin-story-skills 拉齐（guyin-write 0.11.0→0.14.0 / guyin-setup 0.7.1→0.8.0 / review 0.8.0→0.9.0 / deslop 0.5.0→0.6.0 / pitch 0.1.0→0.2.0 / short-write 0.5.0→0.6.0），重部署全部执行层部署件",
+    "framework_commit": "1830b0e",
+    "note": "本次关键变化：执行层卡片删「填空式写手」，改为「场景执笔者」（一卡一场、承载得住一卡整章）；写作卡从逐 beat 填空改为「三类权限（不可擅改/这一场/必要材料）」场景简报，表达判断权归执笔；solo 与 subagent 同权限。用户指示「清掉 model」——.claude/agents/guyin-beat-writer.md 原有的 model: deepseek-flash 未回填，三端执行层当前均为未配置（等同 solo）。",
+    "model_backfill": "无（用户指示清掉）",
     "skill_install_paths": {
       "cli": "C:/Users/PC/.agents/skills（npx skills add ... -g -a opencode 落点）",
       "workbuddy": "C:/Users/PC/.workbuddy/skills（已从 CLI 落点同步）"
     },
-    "backup": "C:/Users/PC/.workbuddy/skills/_backup/pre-update-20260915-2052"
+    "backup": "C:/Users/PC/.workbuddy/skills/_backup/pre-update-20260917-160029",
+    "upgrade_backup": "D:/readbook-workspace/追影/.guyin/upgrade-backup/2026-09-17"
   }
 }

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "run_id": "ch001-20260917",
+  "target": {
+    "chapter": 1,
+    "title": "他不是要睡觉",
+    "mode": "append"
+  },
+  "candidate": ".guyin/work/ch001-20260917/candidate.md",
+  "destination": "正文/第001章_他不是要睡觉.md",
+  "transaction": ".guyin/work/ch001-20260917/transaction.json",
+  "baseline": [
+    { "path": "追踪/_tracking-state.json", "hash12": "df3722e0b362" },
+    { "dir": "正文", "files": ["README.md"] }
+  ],
+  "expected_state_revision": 0,
+  "review": {
+    "mode": "完整章审读（solo·编排层全文初读＋设计核对＋主缺陷路由）",
+    "conclusion": "六场逐场核过动机、知情边界、收益承接，与批次公约「打脸须当众有围观者反应镜头」（本稿 6 处）。主缺陷＝认证场未给足（L2），已按整场补足围观者反应；字数 2816→3200+ 转绿。章检链 14 道：13 绿，唯一 hard＝repetition/fingerprint-arrears（首章结构性产物，出口即本步指纹固化）。6 项 editorial 处置留 追踪/运行记录/第001章.md。候选 hash12 0d23bcd2ff90。",
+    "evidence": ["追踪/运行记录/第001章.md"]
+  },
+  "check_evidence": [".guyin/work/ch001-20260917/check-evidence.md"]
+}

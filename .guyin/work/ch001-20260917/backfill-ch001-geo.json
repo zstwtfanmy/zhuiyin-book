@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "geo": [
+    {
+      "action": "upsert",
+      "id": "G002",
+      "chapter": 1,
+      "name": "城南早点铺",
+      "aliases": [],
+      "anchor": "他四十七岁那年，在城南一家早点铺里，一个女人给他端了碗面。",
+      "ref": null,
+      "keywords": ["早点铺", "城南"]
+    },
+    {
+      "action": "upsert",
+      "id": "G003",
+      "chapter": 1,
+      "name": "沈家",
+      "aliases": ["自家", "里屋", "堂屋", "自家门口", "里屋门口"],
+      "anchor": "他走到自家门口的时候，听见屋里有人说话。",
+      "ref": null,
+      "keywords": ["沈家", "自家", "堂屋"]
+    }
+  ]
+}

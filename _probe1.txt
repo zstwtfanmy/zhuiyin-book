@@ -1,0 +1,30 @@
+﻿=== work dir ===
+D:\readbook-workspace\追影\.guyin\work\ch001-20260917 |  | 09/17/2026 17:45:50
+D:\readbook-workspace\追影\.guyin\work\ch001-20260917\candidate.md | 8519 | 09/17/2026 17:45:50
+=== skill scripts ===
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-ai-patterns.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-authority-leak.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-beat.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-consistency.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-degeneration.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-flesh.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-foreshadow-id.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-hook-rotation.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-integrity.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-narrative-asset.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-opening-retention.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-outline-copy.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-outline-deliver.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-outline-slots.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-outline-verdict.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-pending.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-pitch.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-reader-signal.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-repetition.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-rule-conflict.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-strip.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-trial-gate.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-check-wordcount.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-impact-map.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\guyin-normalize-punctuation.js
+C:\Users\PC\.workbuddy\skills\guyin-write\scripts\lib\guyin-handling.js

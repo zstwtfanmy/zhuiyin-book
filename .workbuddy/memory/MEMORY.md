@@ -1,173 +1,50 @@
 # 追影 — 项目长期记忆
 
-## ⭐ 技能包更新通道（2026-09-15 实测，勿再犯）
+## A. 环境与通道
+- Bash coreutils 全缺 → 一律 PowerShell；PowerShell 工具**不回传 stdout**，输出写文件再 Read；中文乱码设 `[Console]::OutputEncoding=UTF8` + `Out-File -Encoding UTF8`。
+- 技能更新：`git ls-remote` 判存活（**禁 WebFetch 抓 GitHub 网页**，会误判 404）；npx 直调不通 → node 直调 npx-cli.js；落点是 `.agents/skills` 非 `.workbuddy/skills`，须 robocopy `/E` 同步（不先删，残留用 `[IO.File]::Delete` 清）。
+- 版本基线（0.14.0）：write 0.14 / setup 0.8 / review 0.9 / deslop 0.6 / pitch 0.2 / short-write 0.6 / analyze 0.5 / short-analyze 0.4 / story 0.6。
 
-- **上游仓库存在且活跃**：`git@github.com:zstwtfanmy/guyin-story-skills.git`（HEAD 2026-09-15 20:16）。判断仓库存在性一律用 `git ls-remote`，**不要用 WebFetch 抓网页**——GitHub 会把网页渲染拦成 404 页，据此误判成"仓库已删"（已犯过一次）。
-- **落点坑**：`npx skills add zstwtfanmy/guyin-story-skills -g -a opencode -y` 装到 `C:/Users/PC/.agents/skills`，**不是** WorkBuddy 实际加载的 `C:/Users/PC/.workbuddy/skills`。**装完必须手动 `cp -r` 同步到 `~/.workbuddy/skills`**，否则版本号变了但技能不生效。
-- 更新前先 `cp -r` 备份到 `~/.workbuddy/skills/_backup/pre-update-<时间戳>/`。
-- 当前版本基线：guyin-write **0.11.0** / guyin-setup **0.7.1** / guyin-review 0.8.0 / analyze·deslop 0.5.0 / story 0.6.0 / short-write 0.5.0。
+## B. 框架状态结论（最高权威，第三版）
+- 根因：三模型分离从未真正跑（执行层 model 未配置）→ 实际 solo 直写。**结论：三模型分离 → 单模型三角色分离**（编排保结构/作者保涌现/检查保正确，靠提示词切换），趣味性交给真实读者信号。
+- 已作废勿复用：补三道脚本、负相关、框架缺爽文方法论。
+- 仍成立：判框架状态必须先读全量文件；纸面修复≠真修复。读者信号机制已存在，缺的是真实正文验证。
 
-## ⭐ tracking-commit 提交规格（2026-09-15 ch001 实测，逐条踩过）
+## C. 项目硬约定（改了即破契约）
+- 复沓锚句：「他把杯把手转了一下，朝外」每章一次；「手放在膝盖上」每章上限一次（老爸肝病指征 ch194 回收，望诊用变体「搁在膝盖上的那只手」）；「看手」四连归 ch001 只引用不重述。
+- 叙述层称谓：一律关系称谓，禁全名做主语复读（九岁限知 POV）。
+- 世次基准：「他四十七岁那年」=第二世，开篇刚死一次刚回穿；**「往前倒三十八年」是钉死回穿的时间锚（2026-09-18 发现重做 ch001 时误删，须补回）**。卷五 2022-2030，ch194 老爸走 2029，不许推 2038。
+- 「吃饭了没」：正方向归小满妈（三次配额）；反方向（老妈对舅舅）ch001 一次性不计配额；老妈签名 tic「吃不吃西瓜」。
+- 四类自查：应答动作重复 / 时序倒错 / 主语指代偷换 / 句首缺字。
 
-- **commit 模式 context 只收 4 项**：`position` / `long_term_constraints`(≤6) / `active_character_names`(≤6) / `continuity_risks`(≤5)。`recent_chapters` 由 `delta.result` 自动派生、`next_chapter_commitments` 从 `delta` 取——**这两个传给 context 即报 unknown key**。
-- **空盘（ch000）不能留空串**：`clean_text` 默认拒空值，`context.position.story_time = ""` 会让 `load_state()` 崩——而 commit 每次都要先 normalize 存量 state。空盘占位必须写「未开始（chN 起于…）」。
-- **`delta.result` 安全线是 360 字节，不是 480**：它会被渲染成 `recent_chapters[].summary`（上限 360）；按 480 写会在合并后的二次校验炸。480 只是 delta 自身字段上限。
-- **渲染后 delta 硬上限 3072 字节**（目标 1536）。首章同时登记 5 角色 + 4 伏笔 + 2 事件 + 定性 + 物证 + 地理**必然超**。削减顺序：① 地理/场景（可从正文再推）→ ② 次要物证 → ③ 压缩每角色 change 文本（目标 ≤110 字节）。
-- **`character_snapshots` 必须是 `character_changes` 的子集**（脚本硬校验）——想少写 change 行就得少交 snapshot。
-- **revision 模式不能退役/替换 context 项**：脚本明说 retire 只能走 append。改上下文措辞＝**追加新条**，旧条原文必须原样重交，否则 `a revision must resubmit every current context item`。
-- 提交后必须 `check`：验派生视图逐字一致 + 时滞=0。
+## D. tracking-commit 关键坑
+- commit context 只收 `position/long_term_constraints/active_character_names/continuity_risks`；`recent_chapters`/`next_chapter_commitments` 由工具派生，传了报 unknown。
+- 字节上限：delta 硬上限 3072（首章必超，削减顺序地理/场景→次要物证→压缩角色 change）；`delta.result`≤360→`chapter_summaries`≤480；`clean_string_list` 单项≤384；`clean_text` 把 `|` 换 `｜`。
+- `character_snapshots` ⊆ `character_changes`（硬校验）；`active_character_names` ⊆ characters 且有快照。
+- revision 不能退役/替换 context 项（retire 只能 append），改措辞=追加新条。
+- 派生视图必须与 state summary 逐字一致，改完重跑 check。`last_chapter=0` 禁登记伏笔/时间线等；`init` 是清盘唯一正道（输入要求 state 不存在）。
+- 补登记用 `backfill`（不增逐章记录），**先读逐章记录确认 ID 水位**（曾误用 G002 覆盖城南早点铺）。
 
-## ⭐ prose-fragment-ratio 的口径陷阱（勿再被它牵着改稿）
+## E. 检查脚本口径
+- 不收 `--project`（传了会假绿 exit0）：wordcount/ai-patterns/outline-deliver/repetition/strip/integrity/consistency/degeneration/narrative-asset/outline-copy/slots/verdict/opening-retention。收 `--project`：hook-rotation/pending/rule-conflict/reader-signal/foreshadow-id。
+- 判绿看 blocking 数==0，不看 exit code。`outline-copy` 读复沓锚句整块、`outline-deliver` 只读首行 → 功能性原话放续行。
+- `foreshadow-id` 用 `/\bF0*(\d{1,4})\b/g` 扫细纲，历史引用 F7→F007 误判，措辞别写 `F\d`。
 
-- 该指标把**对白行也算进"叙述段"分母**。对白密度高的章（如 ch001：对白 39 段 / 叙述 64 段）总数会虚高到 50%，而**纯叙述口径只有 25%**，正好在阈值线。
-- **处置顺序**：先拆口径（对白 vs 叙述分开数）→ 再判断是否真"内容很干"。若纯叙述口径已 ≤25%，**不要为了指标去并对白**（会把"一问一答"的契约节奏压平）。
-- 真正该合并的是"相邻同镜头叙述段"。ch001 实测：合并 16 处 → 纯叙述 43%→25%、均段 25.0→28.6。
+## F. 内容层重置（用户亲手做，勿逆）
+- 删除：正文第001~003章/细纲001/逐章记录001/复沓锚句。规矩：缺失≠缺口，勿从 git/归档恢复。
+- `逐章记录/第N章.md` 是 delta 源，删了而 last≥N 则 check 报 chapter delta missing。
+- 状态层已重置 ch000（init 通道），备份 `.guyin/state-reset-backup/2026-09-17/`；不变式在 constraints 6 + risks 5 + next_commitments 5 条。
+- ch001 已 publish（prose hash12 `0d23bcd2ff90`，state revision 3）。
 
-## 检查脚本用法（判绿一律数 blocking，不看 exit code）
+## G. publish 实操（2026-09-17 首通）
+- 清单键：`schema_version=1, run_id, target{chapter,title,mode}, candidate(须在 .guyin/work/{run_id}/ 内), destination(正文/ 下 第0*N章*.md), transaction, baseline[], expected_state_revision, review{mode,conclusion≤900,evidence[]}, check_evidence[]`。
+- **证据绑定用小写 hash12**（`sha256[:12]` 小写，逐字含在证据文件字节里；只写大写判未绑定）。baseline 目录条目 hash12 也小写；首发正文基线是 README.md。
+- 链：prepared→_write_prose→_commit_tracking→_commit_fingerprint（持锁 node `--commit --under-lock`，**唯一关 fingerprint-arrears 出口**）→_finalize；崩用 recover。
+- 落地前必 dry-run（importlib 加载脚本，normalize→merge→render 不写盘）。
+- **同一文件多处 Edit 必须串行**（并发丢更新，transaction.json 曾丢 4 处都报成功）；改完 hash12 与 `_publication.json` 对比。
+- trial-gate：`--chapter N` 判要写第 N 章；`--chapters` 只给 `--hash` 用且该段正文须全在。
 
-- **不收 `--project` 的脚本**：`wordcount` / `ai-patterns` / `outline-deliver` / `repetition` / `strip` / `integrity` / `consistency` / `degeneration` / `narrative-asset` / `outline-copy` / `outline-slots` / `outline-verdict` / `opening-retention` —— 只收 `<文件|目录>`。传了 `--project` 会把 usage 打到 stdout 且 **exit code 恒 0**（假绿陷阱）。
-- **收 `--project` 的**：`consistency`（待确认，实测无 project 也跑）、`hook-rotation` / `pending` / `rule-conflict` / `reader-signal` / `foreshadow-id`（项目级）。
-- `flesh`：`<角色名> <目标>` 或 `--all <目标>`；脚本有 `die is not defined` 的 bug。
-- `pitch`：子命令 `name <书名...>` / `blurb --blurb <文件> <大纲目录>` / `titles <目录>`；titles 按**文件名**取标题段，本项目标题写法会误报 `title-missing`（口径不匹配，非真缺）。
-- **判绿标准**：`脚本 ... 2>&1 | grep -c "\[blocking\]"` == 0。advisory 计数单列。
-
-## ⚠️ guyin-write 框架整改落地度（2026-09-15 核查，别重复摸）
-
-整改任务书（`框架整改任务书_文风是题材的函数.md`）P0/P1/P2 六项，实测只落了 P0-1 + P0-4：
-- ✅ P0-1 → 以 `设定/题材定位.md`（v3-A3）形式落地，`SKILL.md` 第23/41/73 行已引用
-- ✅ P0-4 → `consult/reader-contract-and-progression.md` 已建；`SKILL.md` 第41行把「读者契约/终局底牌」列为写章必读对照源（=读者契约放出来了）。但 `consult/INDEX.md` 第3行仍写"永不下发"（措辞未同步）
-- ❌ **P0-2 `guyin-check-genre-fit.js` 不存在** —— "文风×题材匹配"开书闸门未建
-- ❌ **P1-1 `guyin-check-reader-risk.js` 不存在** —— 只有 `reader-signal`（掉崖/弃书点），不是任务书那四条判据（可记忆人物/主动行为/信息增量/章首目标）。**"没有一道闸门查好不好看"这个根因仍未修**
-- ❌ P0-1 的"四件→五件"（`作者性引导.md` 仍是四件）、P0-3 的"题材正文提示卡"（卡片模板未接进读盘）
-- ✅ **更正（2026-09-16）**：P2-1"样本>论证"**其实已落地**——`SKILL.md` 不变式第6条（第17行）"提分必须引正文样本"。上轮核查漏了，勿再记为"未落地"。
-- **推论**：ch001 能"不木"是 P0-4 等效实现（题材定位下发）+ 模型白描能力的结果，**不是** genre-fit/reader-risk 的功劳。⚠️ 2026-09-16 纠错：**"根治木须补 genre-fit/reader-risk 两道脚本"这个结论已作废**——这两道是桶B撤回的错方向（机械判不了趣味）。读者信号机制其实已落地（自检卡Q9-11 + 4a初读 + 黄金三章四留存），问题是"从未被真实正文验证"，不是"缺脚本"。
-
-## ⭐ 框架吸引力机制整改（2026-09-16 终版，⚠️ 已被第二版验真版部分撤回）
-
-> ⚠️ 2026-09-16 下午纠错：本节的"六整改项"里 **P0-2 engagement.js、P1-1 reader-risk.js（新增趣味闸门）方向错，已撤回**（桶B：机械判不了趣味）。「细纲协议无阻力/代价槽位」也降级为"思考提示非硬门"。真正成立的只有"读者信号一等公民 + 4a初读 + 即时层"这些——但它们**框架其实已经落地了**（见上方最高权威章节的行号）。勿再按本节六项照改。
-
-作者要求"从框架层面解决，重新开一本相同题材书别还是这个效果" → 产出 `框架整改任务书_吸引力机制.md`（与《文风是题材的函数》并列，修同一个元病的投影 B）。
-
-**元病**：框架把"读者要什么"锁在 consult 库「永不下发」（SKILL.md 第8行），两个投影：A=题材文风被锁→木（已修）；B=冲突/黄金三章知识被锁→没吸引力（本任务书修）。
-
-**五断点（精确到文件+行）**：
-1. 知识锁库：SKILL.md 第8行"永不下发"锁了 opening-design/quality-checklist/genre-core-mechanics
-2. 细纲协议无「阻力/代价」槽位：细纲协议第53行因果三问、第66行"行动成本（可无）"——"可无"给了无对抗无成本合法出口
-3. opening-retention 只查"填没填"不查"好不好"：脚本第48行明说语义质量留给自检卡 Q9-Q11
-4. 写章读盘无"吸引力自查"：SKILL.md 第41行读盘清单无此项
-5. 不变式无"读者坐标"：6条里0条谈"读者获得什么"
-
-**六整改项**：P0-1 加阻力/代价槽位+因果五问；P0-2 新增 engagement.js 四齿轮闸门；P0-3 opening-design必达指标提进细纲协议；P0-4 读盘加吸引力自查；P0-5 拆"永不下发"语义；P1-1 reader-risk.js；P2-1 不变式加第7条"读者坐标优先"。
-
-**验收标准（关键）**：不是"新门全绿"，是"新门对旧 ch001 全红"（旧件跑新门应报阻力/代价缺失）——证明换一本书不会再写出这个效果。
-
-**铁律**：机械判据只查"存在"不判"好坏"（否则框架=用脚本替代审美，和"木"同一个病）；四齿轮/读者坐标是通用结构，不是"每章必打脸"的爽文模板。
-
-以下"重复"是细纲点名的刻意复沓，改动即破坏契约：
-- 「他把杯把手转了一下，朝外」——每章一次：ch001 给老爸 / ch002 给老妈 / ch003 舅舅没看见、老爸看见了；ch194 老爸临终回收
-- 「手放在膝盖上」——**每章上限一次**；老爸的坐姿锚点兼肝病指征（ch194 临终回收）。⚑ 2026-09-15 ch001 实测：原稿点15/点17 各落一次＝真违规，点17 已改「搁在膝盖上的那只手」变体；**望诊老爸时不要复述锚句本体**
-- 「看手」——ch001 首现台词级锚定（"看哪儿""看手""手怎么了""手指头直着，不会弯"四连），后续章节只许引用不许重述
-
-## 排查"逻辑重复/时序倒错"的四类信号
-
-用户对该类问题敏感，写完章应自查：
-1. 应答类动作重复（叫名—应答只应一次；走神则第一遍不答）
-2. 时序倒错（同一物件先放桌上又递到手里）
-3. 主语/指代偷换（连续"他"在父子、甥舅之间切换；对话中"他说"紧接他人台词易被误读为自答）
-4. 句首缺字（省略号被标点规范化脚本误删）
-
-## 已登记豁免的章检 advisory（判为有意文体，不注水）
-
-- ch002 micro-action-tic 6.5/千字、ch003 micro-action-tic 6.1/千字：均为有意文体，不处理
-- ⚠️ **overcompressed 62% 短段已改判（2026-09-11）**：原判"有意节奏／与前两章一致"作废。它是"内容很干"的直接来源（实测均段 15-21 字、≤12 字段占 46-53%），作者已明确前三章不好看。**须走碎段合并（≤12 字段 46%→25%，均段 21→32-40），不再豁免。**
-
-## 叙述层称谓体系（硬约定，勿破）
-
-- 叙述层一律用**关系称谓**：老妈／老爸／李婶／她妈／张叔／舅舅／王浩／陈默。
-- **禁止**在叙述层用角色全名（"李国强""沈亦舟"）做主语复读——九岁 POV 限知，孩子心里不叫大人全名。
-- 全名只在首次登场或被点名时出一次。消歧（避免连续"他"）**靠改句式**，不靠换全名。
-- 由来：2026-09-10 消歧轮把 ch003 的"他"批量改回"李国强"，改出 47 次全名／27 次段首同头，机械指纹显著。
-
-## 复沓锚句的"每章一次"上限
-
-「手放在膝盖上」是老爸的签名锚点，但**每章上限一次**（细纲 ch001 点19/点21 各一次）。
-ch003 一章三次（含两次"指头动"同型）＝超密度，违反语言纪律"同一场不许两次同一只手的同一动作"。
-
-## 世次基准（硬约定，勿破）
-
-- **开篇 ch001「他四十七岁那年」＝第二世（1975-2022），不是本世未来。** 开篇是刚死过一次、刚回穿（回穿锚点：死亡→2000-09-01）。
-- **ch183 不负责解释年龄**：它兑现的是"那碗面／趁热／他没答上"＝开篇"最后一次开口"。年龄不是契约。
-- 本世卷五＝2022-2030（31-39 岁），ch194 老爸走＝2029（79 岁）。**不许把卷五推到 2038**（年代锚全在 2021 前；老爸会变 90 岁；节奏会塌）。
-- 卷一内须埋一次**世次物证**（他知道一件"看见"解释不了的事），不点破。ch003 说出"东郊红旗老厂区"已是现成信号。
-
-## 「吃饭了没」两方向（硬约定，勿混）
-
-- **正方向（别人对他说）**＝复沓锚句②，三次配额，归**小满妈**：ch002 笑／ch057 不笑／ch183 刀。
-- **反方向（老妈对舅舅说）**＝ch001「哥，吃饭了没，我给你盛」＝一次性语境台词（细纲点18 契约），**不计配额，全书只此一次**。
-- **老妈的签名 tic 是「吃不吃西瓜」**（ch194 她没问），不是"吃饭了没"。`执行层一页纸` 旧版误记，已修。
-- 对仗：他一辈子让别人吃，自己那句"吃了"始终没答上——同「那杯水」母题。
-
-## tracking-commit 手改视图纪律
-
-- **派生视图（上下文.md、逐章记录/第N章.md 的"结果"）必须与 `_tracking-state.json` 的 summary 逐字一致**，否则 `check` 报 `ERROR: derived view differs`。
-- 生成格式 `- 第N章｜{summary}`，**不带引号、不加附注行**。改完必须重跑 `check`。
-- revision 模式**不接收** `next_chapter_commitments`／`recent_chapters`——提交后必须回查，否则承诺被清空（已踩过一次）。
-- 输入需 `schema_version:1` + `expected_state_revision`；`delta.result` **字节上限 360**（约 116 中文字）。
-
-## ⭐⭐⭐ 框架总诊断（第三版·架构改造版，2026-09-16 中午，最高权威）
-
-**作者点破核心：「内置模型没有用到，创意思路好但没发挥出来」。这条比第二版"纸面未验证"更深一层，是真正根因：**
-
-> **框架是"三模型三端分离"（编排层强模型 / 执行层低模型填空 / 检查层低温模型），但执行层 model 从未配置运行（skill `beat-writer.md` 第4行"不预置 model"+`tools:()`；项目 `.claude` 写 `deepseek-flash` 占位、`.codex` 写 `# model="deepseek-chat"` 注释）。实际是主会话 solo 直写。** "填空式写手"这套降级约束本是"低模型不可控"的锁——低模型根本不运行，锁死的是唯一真正写正文的最强模型。创意（涌现/意外）只能来自"有创作权的作者"，但框架把"作者"定义成"零创作权的填空写手"。
-
-**改造 = 三模型分离 → 单模型三角色分离**（靠提示词+流程切换，不靠模型切换）：
-- R1 重写 `beat-writer.md`：删"填空式写手"→"你是这一拍（beat）的作者"，任务卡分锁死契约+开放空间+禁令，加"本拍涌现"行
-- R2 `SKILL.md` 第62行 solo 从"例外"改"唯一路径"
-- R3 三端部署件删 model 占位
-- R4 `细纲协议.md` 加「留白声明」字段（锁死区/开放区）
-- R5 灵感登记正名"涌现转正"
-- **不改**：检查层（脚本+自检卡零温）、正确性闸门、自检卡Q9-11+4a初读+四留存/即兑钩子、趣味性靠读者信号不靠脚本
-
-**分工铁律（修正终版）**：编排角色保结构，作者角色保涌现，检查角色保正确，读者信号保趣味。前三个由同一主模型分饰，最后一个由真实读者提供——不再依赖"不存在的低模型"。
-
-**我替作者做的 8 项决策**：D1 执行层=主模型角色；D2 删"填空式写手"；D3 创作权给；D4 正确性闸门保留；D5 趣味性=读者信号；D6 卡降级为专注脚手架；D7 三端分离改三角色分离；D8 根治动作=改造后拿旧ch001重写一章验证。
-
-**第二版验真版的关键结论仍成立（防复发）**：
-- 判定框架状态必须先读全量文件——第一版漏读 SKILL.md 第8/45/49/62行 + 自检卡Q9-11 + 细纲协议执行偏差区/黄金三章节，才酿成"把已有当缺失"。
-- "负相关/补得越全越没救"是错的：正确性与趣味性正交；真凶是"机制没被执行/执行层被锁死"，不是"机制本身有害"。
-- genre-fit/reader-risk/engagement 闸门方向错（桶B撤回）：机械判不了趣味。
-- "纸面修复≠真修复"：验证只能靠真实样本，不能靠纸面论证。
-
-## ⭐ 框架通用性整改：文风是题材的函数（2026-09-15 终版，已被上方总诊断覆盖）
-
-作者澄清：优化的是**框架本体**（`guyin-write` skill），要拓展到其他小说，《追影》只是样板。经 v1-v5 五轮诊断（中间结论已废止），最终定论：
-
-**框架本体不是"减法美学"，也不缺爽文方法论——缺的是把"题材要求什么文风"从一堆"永不下发"的参考书，变成执行层每次写章都读的一等契约。**
-
-三个框架级根因（合并 = 木 + 没钩子 + 重写无效）：
-1. **文风定位错**：框架把"作者指纹（作者签名）"下发执行层当铁律，把"题材文风（题材要求）"锁进 consult 库"永不下发"。作者签名应作"第二层调色"，却被做成"第一层主色"。
-2. **读者侧知识"永不下发"**：读者心理/读者契约/核心爽点（genre-readers/reader-contract/genre-core-mechanics）整体被 SKILL.md 第8行"方法论永不下发"隔离——执行层不知道读者要什么。
-3. **缺"文风×题材匹配校验"闸门 + 缺"吸引力"检测维度**：几十道闸门全查"合规"，没有一道查"好不好看"，错配畅通无阻。
-
-整改 P0/P1/P2（精确到 skill 文件，见唯一权威文档）：
-- P0-1 作者性四件→五件，加"题材定位"为第0件（改 references/作者性引导.md）
-- P0-2 加 genre-fit 开书闸门（新增脚本）
-- P0-3 题材正文提示卡接进写章读盘（改 SKILL.md 第41行）
-- P0-4 "永不下发"拆语义：题材契约下发、气句原文仍隔离（改 SKILL.md 第8/63行）
-- P1-1 新增 reader-risk 吸引力检测（新增脚本）
-- P2-1 立"样本>论证"纪律（改 SKILL.md 不变式第6条）
-
-**关键认知（防复发）**：
-- 爽文可以"隐信息"（悬念），不能"隐情绪"（代入）；"木"=留白塌成空白（读者读不出主角没说的东西）。
-- 框架骨架（编排/执行分离、追踪状态机、闸门链、细纲协议）**不动**；气句原文"永不下发"（防腔调化）这条**保留**，只放"题材/读者"类知识出来。
-- 样板《追影》的"三不写/对话签名/零解密"等 = 根因在样板上的投影，落地动作在 `框架问题清单_交外部处理.md`（F/S/C/H 编号）。
-
-**文档收敛（2026-09-15）**：删除 v1-v4 四份中间诊断（诊断_前三章失吸引力归因/诊断_框架整改为何无效/框架整改任务书_三病灶根因与改法/诊断_根因_减法美学与爽文背离）。唯一权威 = `框架整改任务书_文风是题材的函数.md`（项目根目录）。
-
-
-
-## 隐笔框架两个机械事实（勿再摸索）
-
-1. `guyin-check-outline-copy.js` 读细纲「复沓锚句」**整块（多行）**；`guyin-check-outline-deliver.js` **只读该字段首行**。→ 功能性原话（样张定稿句／术语四连／契约台词）放**续行**：既免誊抄指控、又不新增落地义务。续行须是正文里**连续 ≥16 字**的原话（脚本先 `hanOnly` 抹掉引号与换行，相邻对白会被并成一句，故要连着写）。
-2. `guyin-tracking-commit.py` revision 语义：`chapter_summaries[N]=delta.result`（**480 字节**硬上限，中文≈160 字）；`context` 须整份重交 4 项；`character_changes` 里的核心角色**必须**同时交当前快照；`next_chapter_commitments` 只在 append 或 `chapter==last_committed` 时进 state，但**决定逐章记录那一行**——revising 旧章要显式传。
-
+## H. ch001 诊断结论（2026-09-18）
+- 见 `大纲/框架诊断_第001章_20260918.md`（v2 聚焦框架机制）。核心三点：①**框架有 `guyin-normalize-punctuation.js`，能识别"——"（正则 `——|—|--+`），但 em-dash severity=advisory（低），`---`=blocking**；门挂 SKILL.md L44（写章循环第 4 步拼接，编排层必跑），**不在 publish prepared 全检**（全检只跑 pending+repetition）——所以"——"漏网=定级低+不在全检+执行层第 4 步漏跑三层叠加。②误删"往前倒三十八年"无人报=框架无"一次性关键锚句/时间锚"登记位，检查门只做后验正确性不做完整性留存。③开头没变=细纲"授权照抄区"无边界+无"保护/重写"开关，保护定稿默认开吞掉"推翻重做"授权。
+- **操作纪律（每次写章）**：第 4 步拼接后**必跑 `node guyin-normalize-punctuation.js 候选文件`**（默认写入模式自动清"——"），并**补登记一次性时间锚/世次锚**（框架无此台账，靠自查）。
+- 改已发布章的开头**须走 revision 或清盘，不能直接改文件**。

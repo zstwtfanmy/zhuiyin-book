@@ -1,0 +1,21 @@
+﻿# 重部署备份 MANIFEST
+
+- 备份时间(UTC): 2026-09-17T08:18:04Z
+- 项目: 追影
+- 原 guyin_version: 0.11.0  ->  新 guyin_version: 0.14.0 (guyin-setup 0.8.0)
+- 回填项: 无（用户指示「清掉 model」）
+- 原 model 配置（已弃用，未回填）: .claude/agents/guyin-beat-writer.md -> model: deepseek-flash
+
+| 原文件 | SHA256(备份时) |
+|---|---|
+| .claude\agents\guyin-beat-writer.md | 3AF15554725263665D7CC8DE00809B3F0550F0BAF4BA1664EB2C98995A92CC13 |
+| .claude\agents\guyin-checker.md | CD6AF3E557F29D73C00CA4BB16FA0096A050ED9C734239401DE220406D48F278 |
+| .claude\hooks\guyin-hook.js | 5EC2DF594F403D0D0D72CCBA7FB0245E79D220B4BFBFD59FEFD0F4FAE18BD97C |
+| .claude\settings.json | 09494174C3CFD6D5211489AC3B18CAB0A0BFD937E78A88E964974D84353810DF |
+| .codex\agents\guyin-beat-writer.toml | 11FC61F97CC228FFD2A2BB110585A60DC9BDADFC71ED985B5326F975EAB1F8B2 |
+| .codex\agents\guyin-checker.toml | 1E442AC56982441CD3874E4C5869AD77EEB303475A13D2EEF24C30B796C612CE |
+| .opencode\agents\guyin-beat-writer.md | 4B73FDBEE5EB2D1DD79DDE58CD9E3E21B119D965E48C4FA95C1F2761AD01A793 |
+| .opencode\agents\guyin-checker.md | 0BE89502B7EEA7C060F59166F4608A19EFE55C5DF2874F5E3C4B5F7C617A6B6D |
+| .guyin-deployed | F21A0A131E6118BFAE68E1CF018D8DA484FAE046BD583226E933A5CD17FB7381 |
+
+回滚：把本目录下同名文件覆盖回项目对应位置即可。

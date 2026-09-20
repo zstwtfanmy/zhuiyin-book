@@ -1,0 +1,68 @@
+{
+  "archive": null,
+  "expected_state_revision": 0,
+  "final": {
+    "at": "2026-09-17T18:07:58+08:00",
+    "library_hash12": "40e8d5c1bb4b",
+    "prose_hash12": "0d23bcd2ff90",
+    "state_hash12": "ab4ae2bf9a04",
+    "state_revision": 1
+  },
+  "inputs": {
+    "candidate": {
+      "hash12": "0d23bcd2ff90",
+      "rel": ".guyin/work/ch001-20260917/candidate.md"
+    },
+    "destination": "正文/第001章_他不是要睡觉.md",
+    "transaction": {
+      "hash12": "6c2bfd2660cf",
+      "rel": ".guyin/work/ch001-20260917/transaction.json"
+    }
+  },
+  "run_id": "ch001-20260917",
+  "schema_version": 1,
+  "stage": "complete",
+  "steps": {
+    "fingerprint_committed": {
+      "at": "2026-09-17T18:07:57+08:00",
+      "imagery_hash12": "79b3c3e44ec6",
+      "library_hash12": "40e8d5c1bb4b"
+    },
+    "prepared": {
+      "at": "2026-09-17T18:07:54+08:00",
+      "state_revision": 0
+    },
+    "prose_written": {
+      "at": "2026-09-17T18:07:54+08:00",
+      "prose_hash12": "0d23bcd2ff90"
+    },
+    "tracking_committed": {
+      "at": "2026-09-17T18:07:56+08:00",
+      "chapter": 1,
+      "state_hash12": "ab4ae2bf9a04",
+      "state_revision": 1,
+      "views": {
+        "上下文.md": "b363b1d9b227",
+        "事件定性资产.md": "c1fcf8af7fd7",
+        "伏笔.md": "5774b81c2b86",
+        "地理台账.md": "d38dbe42393a",
+        "场景台账.md": "7a0bd76409d8",
+        "时间线/作者真相.md": "ce5b13344e6a",
+        "时间线/读者已知.md": "c7db1c189efe",
+        "物证台账.md": "ed8e75317e67",
+        "章节金字塔.md": "9c0204d202f4",
+        "角色状态/李婶.md": "a5eb7899dbc7",
+        "角色状态/李秀兰.md": "abf84a9fa9e5",
+        "角色状态/沈亦舟.md": "c16a4d673dc3",
+        "角色状态/沈建国.md": "f2c934e41e55",
+        "角色状态/王浩.md": "1fbe433bc723",
+        "角色状态/舅舅.md": "9077b09d1b62"
+      }
+    }
+  },
+  "target": {
+    "chapter": 1,
+    "mode": "append",
+    "title": "他不是要睡觉"
+  }
+}

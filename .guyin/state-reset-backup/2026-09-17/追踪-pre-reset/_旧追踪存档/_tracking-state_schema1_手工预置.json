@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "book_title": "追影",
+  "last_committed_chapter": 0,
+  "imported_through_chapter": 0,
+  "state_revision": 0,
+  "characters": {
+    "沈亦舟": {"state": "alive", "chapter": 0, "note": "主角。本世 2000 年 9 岁（1990 年生）。能力边界＝会做写不出步骤"},
+    "沈建国": {"state": "alive", "chapter": 0, "note": "父。病（本世唯一改成功的一条，C101）"},
+    "李秀兰": {"state": "alive", "chapter": 0, "note": "母。接梗位，永远不在点上"},
+    "陈小满": {"state": "alive", "chapter": 0, "note": "终极女主。她有自己的主线，最后嫁了郑川，没死没病没走"},
+    "郑川": {"state": "alive", "chapter": 0, "note": "修车铺。与她才是一路人。与主角零对手戏零对话"},
+    "陈默": {"state": "alive", "chapter": 0, "note": "班底·技术。ch005 落位"},
+    "王浩": {"state": "alive", "chapter": 0, "note": "班底·接梗。全书第一接梗位"},
+    "李国强": {"state": "alive", "chapter": 0, "note": "舅舅。打脸对象，ch003 / ch016"},
+    "马长贵": {"state": "alive", "chapter": 0, "note": "教导主任。ch011 / ch021"},
+    "刘虎": {"state": "alive", "chapter": 0, "note": "孩子王。ch007 / ch017-019"},
+    "温若": {"state": "alive", "chapter": 0, "note": "唯一说完整长句的人。ch035 出场，结局暖尾"},
+    "赵铁柱": {"state": "alive", "chapter": 0, "note": "第二世兄弟。卷四 ch114 死（改三次还是死）"},
+    "苏老": {"state": "alive", "chapter": 0, "note": "本世没拜师，他一辈子叫他苏老（B 定案）。卷五 ch172 死"},
+    "程守拙": {"state": "alive", "chapter": 0, "note": "论道对手。临县小药铺。ch118-123"},
+    "顾延龄": {"state": "alive", "chapter": 0, "note": "说破过的沈亦舟。主角的黑暗镜像"},
+    "姜淮": {"state": "alive", "chapter": 0, "note": "卷三金融对手。不靠预知，纯判断力"},
+    "康九": {"state": "alive", "chapter": 0, "note": "灰层。老练小老板，第一笔脏钱"},
+    "贺振声": {"state": "alive", "chapter": 0, "note": "黑层。客气、有合同、什么都不欠你"},
+    "周晚": {"state": "alive", "chapter": 0, "note": "第一世同行。三级递进第一级时机"},
+    "乔蔓": {"state": "alive", "chapter": 0, "note": "女性线·第一次"},
+    "池遥": {"state": "alive", "chapter": 0, "note": "女性线·不要名分"},
+    "岑玫": {"state": "alive", "chapter": 0, "note": "女性线·身体最多心为零"}
+  },
+  "context": {
+    "summary": "ch001-005 已完成细纲（v10 重写），正文 0 章。当前状态：他 9 岁，醒来在 2000 年 9 月，已确认老爸的病，已收陈默入班底。卷一共 26 章。",
+    "open_threads": [
+      "老爸的病：已推动体检（ch004），ch006 出结果",
+      "记忆偏移：ch002 那棵不存在的槐树（ch107 才回收，期间不许提）",
+      "代价账本：ch002 第一次小祸（ch131 兑现，期间不许任何人联系两件事）",
+      "她不入镜：ch002 班级合影糊位（每次现场必给最土的解释）",
+      "陈默手腕红印：ch005 埋（ch013 前后才展开）",
+      "倒叙钩子三问：她是谁／他说了什么／为什么是最后一次（ch183 才收）",
+      "他后悔的更早那天，那句没听完的话（ch088 是答案，全书不标记）"
+    ]
+  },
+  "foreshadow": [
+    {"id": "F1", "planted": 1, "content": "那杯水·杯把手朝外", "payoff": 194},
+    {"id": "F4", "planted": 8, "content": "你打架的样子像我哥", "payoff": 131},
+    {"id": "F7", "planted": 3, "content": "舅舅那句你爸这辈子也就这样了", "payoff": 16},
+    {"id": "F11", "planted": 0, "content": "小满第一次挡（旧设，v4 起降为背景）", "payoff": null},
+    {"id": "F18", "planted": 88, "content": "修车那个人挺好的……你在他那儿坐着，不累", "payoff": 183},
+    {"id": "F21", "planted": 2, "content": "那棵不存在的槐树（记忆偏移）", "payoff": 107},
+    {"id": "F22", "planted": 2, "content": "第一次小祸（代价账本）", "payoff": 131},
+    {"id": "F23", "planted": 2, "content": "她不入镜（合影糊位）", "payoff": 183}
+  ],
+  "timeline": [
+    {"chapter": 1, "year": 2000, "event": "醒来。9 岁。三年级开学"},
+    {"chapter": 26, "year": 2001, "event": "卷末：他发现这一世的画面和记忆里不一样了"},
+    {"chapter": 27, "year": 2002, "event": "跳级上初一"},
+    {"chapter": 65, "year": 2008, "event": "高考，18 岁"},
+    {"chapter": 103, "year": 2014, "event": "卷四开局"},
+    {"chapter": 114, "year": 2015, "event": "铁柱死"},
+    {"chapter": 122, "year": 2016, "event": "论道题眼：你现在知道她有多难了"},
+    {"chapter": 143, "year": 2022, "event": "卷五开局·最后一试"},
+    {"chapter": 183, "year": 2028, "event": "一碗面"},
+    {"chapter": 200, "year": 2030, "event": "终章"}
+  ]
+}
