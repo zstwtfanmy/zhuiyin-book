@@ -3,7 +3,14 @@
 ## A. 环境与通道
 - Bash coreutils 全缺 → 一律 PowerShell；PowerShell 工具**不回传 stdout**，输出写文件再 Read；中文乱码设 `[Console]::OutputEncoding=UTF8` + `Out-File -Encoding UTF8`。
 - 技能更新：`git ls-remote` 判存活（**禁 WebFetch 抓 GitHub 网页**，会误判 404）；npx 直调不通 → node 直调 npx-cli.js；落点是 `.agents/skills` 非 `.workbuddy/skills`，须 robocopy `/E` 同步（不先删，残留用 `[IO.File]::Delete` 清）。
-- 版本基线（0.14.0）：write 0.14 / setup 0.8 / review 0.9 / deslop 0.6 / pitch 0.2 / short-write 0.6 / analyze 0.5 / short-analyze 0.4 / story 0.6。
+- 版本基线（2026-09-21 更新后，guyin 系升级到 1.0 世代）：write 1.0.0 / setup 0.9.0 / story 1.0.0 / short-write 1.0.0；未变：review 0.9.0 / deslop 0.6.0 / pitch 0.2.0 / analyze 0.5.0 / short-analyze 0.4.0。skills-update 1.0.0 与 tracking-reset 0.1.0 为本机专属技能，不在上游仓库，不随本次更新。
+
+## A2. 2026-09-21 技能包更新重大变化（写章前必读）
+- **guyin-write 0.14→1.0 是架构级升级**：从「编排层派 subagent 逐 beat 写」改为「单模型自主执笔」（当前会话自己读前文/定走向/写整章/回看/提事实/跑只读检查）。不再分发 writer/checker 执行层 agent，不再有 full/lean/solo 菜单。
+- **关键风险：新版 guyin-write 移除了整个 `scripts/` 目录**（27 个 guyin-check-*.js + guyin-tracking-commit.py + guyin-normalize-punctuation.js + guyin-impact-map.js + lib/），但 SKILL.md 仍引用 `scripts/guyin-author-session.py`、`tracking-commit.py`、`guyin-check-flesh`、`guyin-impact-map`、`guyin-check-reader-signal` 等脚本名 → **脚本引用悬空，上游包自身不一致**。
+- 项目 `.claude/hooks/guyin-hook.js` 是自包含部署件（不实调技能库脚本，只在报错文案里提到脚本名），**不受影响**；但写章流程里实际要跑的 `guyin-tracking-commit.py`（publish/check/recover）与检查脚本，新版技能库里已没有实体。
+- 旧脚本完整保存在 `C:\Users\PC\.workbuddy\skills\_backup\pre-update-20260921-114650\`，必要时可从备份恢复。
+- 结论：**先不要用 1.0 版写新章**，等确认上游脚本去哪了（或从备份把 scripts/ 拷回 guyin-write）再动笔。旧版写章流程（tracking-commit + 章检链）依赖的脚本实体已不在技能库。
 
 ## B. 框架状态结论（最高权威，第三版）
 - 根因：三模型分离从未真正跑（执行层 model 未配置）→ 实际 solo 直写。**结论：三模型分离 → 单模型三角色分离**（编排保结构/作者保涌现/检查保正确，靠提示词切换），趣味性交给真实读者信号。
